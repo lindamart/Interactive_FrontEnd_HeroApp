@@ -1,22 +1,27 @@
-# Interactive_FrontEnd_HeroApp
-
-## Title
+# Title
 
 Hero Generator
 
-## Description
+# Description
 
 As a user I want to be able to search for an image and have the ability to manipulate a preview so that I can be presented with code that I can then copy and use in my HTML and CSS 
 
-## APIs
+# APIs
 
 We will use the Flickr API as well as a quote of the day API (Zen Quotes or Quotes REST)
 
-## Wireframe or Design for the website
+# Wireframe or Design for the website
 
-screenshots
+Desktop
 
-## List of Tasks or Acceptance Criteria
+![](hero_wireframe_desktop.jpg)
+
+Mobile
+
+![](hero_wireframe_mobile.jpg)
+
+
+# List of Tasks or Acceptance Criteria
 
 When the user opens the app a quote of the day appears in the header section.
 
@@ -30,7 +35,8 @@ The user has the ability to enter text to customize the content on their hero pr
 
 When the user clicks the clear button, all previously populated user info is reset
 
-## First Task for each member
+
+# First Task for each member
 
 Jeremiah: Connect the preview section with the live HTML and CSS code output sections
 
@@ -40,7 +46,8 @@ Kieran: Establish layout and initial styling
 
 Luis: Establish layout and initial styling
 
-## What does the functioning prototype have in features for the first week?
+
+# What does the functioning prototype have in features for the first week?
 
 By Saturday 10/9 our goals are as follows:
 
