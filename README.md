@@ -21,6 +21,7 @@ Mobile
 ![](hero_wireframe_mobile.jpg)
 
 
+
 # List of Tasks or Acceptance Criteria
 
 When the user opens the app a quote of the day appears in the header section.
