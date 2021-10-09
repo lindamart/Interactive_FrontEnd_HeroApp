@@ -52,3 +52,11 @@ h1 {
     border: green 5px solid;
     padding: 10px;
 }
+
+.flkr_srchbtn, button {
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    padding: 15px 18px px 18px;
+    border-radius: 1px;
+    cursor: pointer;
