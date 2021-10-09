@@ -5,23 +5,52 @@ body {
 #head-container {
     border: pink 3px solid;
     display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    height: 160px;
+}
+
+.tile-container {
+    height: 70px;
+    margin-top: 2em;
+}
+
+#quote-container {
+    display: flex;
+    height: 25px;
     justify-content: center;
 }
 
 h1 {
     justify-content: start;
+    text-align: center;
+    margin: 0;
+}
+
+#quoteBtn {
+    height: 20px;
+    margin-left: 1em;
 }
 
 #template-container {
     border: darkorchid 5px solid;
     padding: 10px;
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+    height: 15em;
+    padding: 0 1em;
 }
 
 #search-container {
     border: darkred 3px solid;
     padding: 10px;
+    padding: 10px;
+    margin: .5em 1em .5em -.5em;
+    width: 45%;
+}
+
+#imageSearchBtn {
+    cursor: pointer;
 }
 
 #preview-container {
@@ -29,6 +58,9 @@ h1 {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    margin: .5em -.5em .5em 1em;
+    width: 45%;
 }
 
 #clear {
@@ -41,16 +73,22 @@ h1 {
     border: black 5px solid;
     display: flex;
     justify-content: space-around;
+    height: 15em;
+    padding: 0 1em;
 }
 
 #HTML-Code {
     border: gold 5px solid;
     padding: 10px;
+    margin: .5em 1em .5em -.5em;
+    width: 45%;
 }
 
 #CSS-Code {
     border: green 5px solid;
     padding: 10px;
+    margin: .5em -.5em .5em 1em;
+    width: 45%;
 }
 
 .flkr_srchbtn, button {
@@ -60,3 +98,10 @@ h1 {
     padding: 15px 18px px 18px;
     border-radius: 1px;
     cursor: pointer;
+}
+
+.flkr_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+}
