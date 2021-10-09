@@ -1,7 +1,7 @@
-// console.log("Am I connected?")
-
 var flkrList = document.querySelector('ul');
 var fetchButton = document.getElementById('fetch-button');
+var HTML_code = document.querySelector('#HTML-Code');
+
 
 function getApi(rsp) {
     // Looks like you got 99% of the way there!  I think you just had a few mistaken copy and pastes in the URL below.  Check out how I revised below 
@@ -35,6 +35,73 @@ function getApi(rsp) {
 }
 
 fetchButton.addEventListener('click', getApi);
+
+
+// Generate HTML Code output based on content in preview
+// TODO: look into cleaning up this function
+var generateHTML = function() {
+    var inputTitle = document.querySelector('#inputTitle').value
+    var inputSubtitle = document.querySelector('#inputSubtitle').value
+    var inputContact = document.querySelector('#inputContact').value
+    let dynamicHTML = `
+    
+    <textarea disabled> 
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1>${inputTitle}</h1>
+                    <p>${inputSubtitle}</p>
+                    <button>${inputContact}</button>
+                </div>
+            </div>
+    </textarea>
+    `;
+    return dynamicHTML
+}
+
+// Generate CSS Code output based on content in preview
+// const generateCSS = (url) => {
+//     var template = 
+// `<pre>
+// .hero-image {
+//     background-image: url('${url}');
+//     height: 100vh;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     position: relative;
+// }
+    
+// .hero-text {
+//     text-align: center;
+//     position: absolute;
+//     display: flex;
+//     flex-direction: column;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     color: white;
+// }
+
+// button {
+//     color: black;
+// 	text-align: center;
+// 	cursor: pointer;
+// 	border: none;
+// 	width: 50%;
+// }
+
+// </pre`;
+//     #CSS-Code.innerHTML = ''
+//     #CSS-Code.innerHTML = template
+// }
+
+HTML_code.innerHTML = generateHTML()
+
+document.querySelector('#preview-container').addEventListener('keyup', function(){
+    HTML_code.innerHTML = '';
+    HTML_code.innerHTML = generateHTML()
+})
+
 
 
 

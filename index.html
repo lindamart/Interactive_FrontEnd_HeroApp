@@ -25,9 +25,9 @@
             </ul>
         </section>
         <section id="preview-container">
-            <input id="inputTitle" type="text" placeholder="Title Here">
-            <input id = "inputSubtitle" type="text" placeholder="Subtitle Here">
-            <input id="inputContact" type="text" placeholder="Contact Me Here">
+            <input id="inputTitle" type="text" value="Title Here">
+            <input id = "inputSubtitle" type="text" value="Subtitle Here">
+            <input id="inputContact" type="text" value="Contact Me Here">
         </section>
     </section>
     <section id="clear">
@@ -35,10 +35,50 @@
     </section>
     <section id="coding-container">
         <section id="HTML-Code">
-            <textarea>This is where the HTML code will go</textarea>
+           
+            <!-- <textarea disabled> 
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1>Title Here</h1>
+                        <p>Subtitle Here</p>
+                        <button>Contact Me Here</button>
+                    </div>
+                </div>
+            </textarea> -->
+        
         </section>
         <section id="CSS-Code">
-            <textarea>This is where the CSS code will go</textarea>
+            <textarea disabled>
+                
+                    .hero-image {
+                        background-image: none;
+                        height: 100vh;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        position: relative;
+                    }
+                                    
+                    .hero-text {
+                        text-align: center;
+                        position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: white;
+                    }
+                    
+                    button {
+                        color: black;
+                        text-align: center;
+                        cursor: pointer;
+                        border: none;
+                        width: 50%;
+                    }
+                                    
+            </textarea>
         </section>
     </section>
     <section class="flkr_container">
