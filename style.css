@@ -1,7 +1,57 @@
-/* Connected?
 body {
-    background: gray;
-} */
+    background-color: lightblue;
+}
+
+#head-container {
+    border: pink 3px solid;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    justify-content: start;
+}
+
+#template-container {
+    border: darkorchid 5px solid;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around
+}
+
+#search-container {
+    border: darkred 3px solid;
+    padding: 10px;
+}
+
+#preview-container {
+    border: black 3px solid;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#clear {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#coding-container {
+    border: black 5px solid;
+    display: flex;
+    justify-content: space-around;
+}
+
+#HTML-Code {
+    border: gold 5px solid;
+    padding: 10px;
+}
+
+#CSS-Code {
+    border: green 5px solid;
+    padding: 10px;
+}
 
 .flkr_srchbtn, button {
     font-size: small;
@@ -10,4 +60,3 @@ body {
     padding: 15px 18px px 18px;
     border-radius: 1px;
     cursor: pointer;
-}

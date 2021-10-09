@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero App</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel= "stylesheet" href = "style.css">
     <link rel="hero icon" href="hero_icon.jpg" />
+
+    <title>Hero App</title>
 </head>
-
 <body>
-    <section class="flkr_container">
-        <div>
-            <ul class="flkrList"></ul>
-        </div>
-
-        <div class="flkr_btn">
-            <button class="flkr_srchbtn" id="fetch-button">Search</button>
-            <input class="flkr_srch" type="text" placeholder="Search" />
-        </div>
+    <header id = "head-container">
+        <h1> App Title </h1>
+        <div id="quote-container"> "What quote would look like" </div>
+    <button id="quoteBtn"> New Quote </button>
+    </header>
+    <section id="template-container">
+        <section id = "search-container">
+            <input type="text" placeholder="Search...">
+            <input type="submit" id="imageSearchBtn"></input>
+            <ul>
+                <li>Placeholder Item</li>
+            </ul>
+        </section>
+        <section id="preview-container">
+            <input id="inputTitle" type="text" placeholder="Title Here">
+            <input id = "inputSubtitle" type="text" placeholder="Subtitle Here">
+            <input id="inputContact" type="text" placeholder="Contact Me Here">
+        </section>
     </section>
+    <section id="clear">
+        <button id = "clearBtn"> Clear </button>
+    </section>
+    <section id="coding-container">
+        <section id="HTML-Code">
+            <textarea>This is where the HTML code will go</textarea>
+        </section>
+        <section id="CSS-Code">
+            <textarea>This is where the CSS code will go</textarea>
+        </section>
+    </section>
+    <section class="flkr_container">
+      <div>
+          <ul class="flkrList"></ul>
+      </div>
 
-
-
-
-
-
-
-
-
+      <div class="flkr_btn">
+          <button class="flkr_srchbtn" id="fetch-button">Search</button>
+          <input class="flkr_srch" type="text" placeholder="Search" />
+      </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
