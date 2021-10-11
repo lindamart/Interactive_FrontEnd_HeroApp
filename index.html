@@ -12,22 +12,22 @@
 </head>
 <body>
     <header id = "head-container">
-        <h1> App Title </h1>
+        <h1> Hero App </h1>
         <div id="quote-container"> "What quote would look like" </div>
     <button id="quoteBtn"> New Quote </button>
     </header>
     <section id="template-container">
         <section id = "search-container">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..." id="fetch-input">
             <input type="submit" id="imageSearchBtn"></input>
-            <ul>
-                <li>Placeholder Item</li>
-            </ul>
+            <div id="img-container">
+                <!-- <li>Placeholder Item</li> -->
+            </div>
         </section>
         <section id="preview-container">
-            <input id="inputTitle" type="text" placeholder="Title Here">
-            <input id = "inputSubtitle" type="text" placeholder="Subtitle Here">
-            <input id="inputContact" type="text" placeholder="Contact Me Here">
+            <input id="inputTitle" type="text" value="Title Here">
+            <input id = "inputSubtitle" type="text" value="Subtitle Here">
+            <input id="inputContact" type="text" value="Contact Me Here">
         </section>
     </section>
     <section id="clear">
@@ -35,23 +35,53 @@
     </section>
     <section id="coding-container">
         <section id="HTML-Code">
-            <textarea>This is where the HTML code will go</textarea>
         </section>
         <section id="CSS-Code">
-            <textarea>This is where the CSS code will go</textarea>
+            <textarea disabled>
+.hero-image {
+    background-image: none;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+                
+.hero-text {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+button {
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+                                    
+            </textarea>
         </section>
     </section>
-    <section class="flkr_container">
+    <!-- <section class="flkr_container">
       <div>
           <ul class="flkrList"></ul>
       </div>
 
-      <div class="flkr_btn">
-          <button class="flkr_srchbtn" id="fetch-button">Search</button>
-          <input class="flkr_srch" type="text" placeholder="Search" />
-      </div>
-    </section>
 
+        <div class="flkr_btn">
+            <button class="flkr_srchbtn" id="fetch-button">Search</button>
+            <input class="flkr_srch" id="fetch-input" type="text" placeholder="Search" />
+        </div>
+    </section> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 
