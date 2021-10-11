@@ -1,6 +1,6 @@
 var flkrList = document.querySelector('ul');
-var fetchButton = document.getElementById('imageSearchBtn');
-var HTML_code = document.querySelector('#HTML-Code');
+var fetchButton = $('#imageSearchBtn')
+var HTML_code = $('#HTML-Code');
 var previewContainer = document.querySelector('#preview-container')
 
 function getImages() {
@@ -15,8 +15,8 @@ function getImages() {
             var photos = data.photos.photo
 
             // Loop over photos
-            for (let i = 0; i < 8; i++) {
-                let imgURL = `https://live.staticflickr.com/${photos[i].server}/${photos[i].id}_${photos[i].secret}.jpg`
+            for (var i = 0; i < 8; i++) {
+                var imgURL = `https://live.staticflickr.com/${photos[i].server}/${photos[i].id}_${photos[i].secret}.jpg`
                 
                 // Created image element
                 var flkrImg = $("<img>")
@@ -26,10 +26,10 @@ function getImages() {
                 flkrImg.attr("src", imgURL)
                 
                 // When an image is clicked change the preview background image and CSS-code background URL
-                flkrImg.on('click', function() {
-                    $('#preview-container').css("background-image", `url(${imgURL})`);
-                    generateCSS(imgURL)
-                })
+                // flkrImg.on('click', function() {
+                //     $('#preview-container').css("background-image", `url(${imgURL})`);
+                //     generateCSS(imgURL)
+                // })
                 
                 // Attach image to image container
                 $('#img-container').append(flkrImg)
@@ -37,7 +37,13 @@ function getImages() {
         });
 }
 
-fetchButton.addEventListener('click', function() {
+$('#img-container').on('click', '.flkrImgResult', function() {
+    var imgURL = this.src
+    $('#preview-container').css("background-image", `url(${imgURL})`);
+    generateCSS(imgURL)
+})
+
+fetchButton.on('click', function() {
     $('#img-container').empty()
     getImages()
 });
@@ -46,10 +52,10 @@ fetchButton.addEventListener('click', function() {
 
 // Generate HTML Code output based on content in preview
 // TODO: look into cleaning up this function
-var generateHTML = function() {
-    var inputTitle = document.querySelector('#inputTitle').value
-    var inputSubtitle = document.querySelector('#inputSubtitle').value
-    var inputContact = document.querySelector('#inputContact').value
+function generateHTML() {
+    var inputTitle = $('#inputTitle').val()
+    var inputSubtitle = $('#inputSubtitle').val()
+    var inputContact = $('#inputContact').val()
     let dynamicHTML = `
     
     <textarea disabled> 
@@ -66,7 +72,7 @@ var generateHTML = function() {
 }
 
 // Generate CSS Code output based on content in preview
-const generateCSS = (url) => {
+function generateCSS(url) {
     var template = 
 `<textarea disabled>
 .hero-image {
@@ -102,11 +108,11 @@ button {
     $('#CSS-Code').append(template)
 }
 
-HTML_code.innerHTML = generateHTML()
+HTML_code.append(generateHTML())
 
-document.querySelector('#preview-container').addEventListener('keyup', function(){
-    HTML_code.innerHTML = '';
-    HTML_code.innerHTML = generateHTML()
+$('#preview-container').on('keyup', function(){
+    HTML_code.empty()
+    HTML_code.append(generateHTML())
 })
 
 
