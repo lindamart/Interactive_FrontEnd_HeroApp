@@ -11,11 +11,11 @@ We will use the Flickr API as well as a quote of the day API (Zen Quotes or Quot
 
 # Wireframe or Design for the website
 
-Desktop
+## Desktop
 
 ![](hero_wireframe_desktop.jpg)
 
-Mobile
+## Mobile
 
 ![](hero_wireframe_mobile.jpg)
 
