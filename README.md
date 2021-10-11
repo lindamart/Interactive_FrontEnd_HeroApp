@@ -54,4 +54,6 @@ By Saturday 10/9 our goals are as follows:
 
 * Hit the Flickr API endpoint and fetch an array of photos that match a query string (whether that be directly from the user input or from a test query string)
 * Connect the preview section with the live HTML and CSS code output sections
-* Establish a layout structure and begin styling
+* Establish a layout structure and begin styling\
+* 
+* ![example generator](https://user-images.githubusercontent.com/89287787/136864786-2f80bfb4-0eb1-42f8-91a3-515deee62878.png)
