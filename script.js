@@ -1,10 +1,10 @@
 var flkrList = document.querySelector('ul');
-var fetchButton = document.getElementById('fetch-button');
+var fetchButton = document.getElementById('imageSearchBtn');
 var HTML_code = document.querySelector('#HTML-Code');
+var previewContainer = document.querySelector('#preview-container')
 
-
-function getApi(rsp) {
-       var testKeyword = document.querySelector("#fetch-input").value
+function getImages() {
+    var testKeyword = document.querySelector("#fetch-input").value
     var requestUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=ff186f827916d3c42a8a2f504e5903d4&tags=${testKeyword}&format=json&nojsoncallback=1`;
 
     fetch(requestUrl)
@@ -12,40 +12,35 @@ function getApi(rsp) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
-
             var photos = data.photos.photo
 
             // Loop over photos
-            for (var i = 0; i < 8; i++) {
-                var listItem = document.createElement('li');
-                console.log(photos[i])
-                photos[i].id
-                photos[i].server
-                photos[i].secret
-                var url = `https://live.staticflickr.com/${photos[i].server}/${photos[i].id}_${photos[i].secret}.jpg`
-                console.log(url)
+            for (let i = 0; i < 8; i++) {
+                let imgURL = `https://live.staticflickr.com/${photos[i].server}/${photos[i].id}_${photos[i].secret}.jpg`
                 
                 // Created image element
                 var flkrImg = $("<img>")
+                flkrImg.addClass('flkrImgResult')
                 
                 // Changed the image source to the URL 
-                flkrImg.attr("src",url)
-
-                // Get photo names
-                fetch
-                listItem.textContent = photos[i].title
+                flkrImg.attr("src", imgURL)
                 
-                // Attached image to list
-                flkrImg.appendTo(flkrList)
-
-                // Attached list title 
-                flkrList.appendChild(listItem);
+                // When an image is clicked change the preview background image and CSS-code background URL
+                flkrImg.on('click', function() {
+                    $('#preview-container').css("background-image", `url(${imgURL})`);
+                    generateCSS(imgURL)
+                })
+                
+                // Attach image to image container
+                $('#img-container').append(flkrImg)
             }
         });
 }
 
-fetchButton.addEventListener('click', getApi);
+fetchButton.addEventListener('click', function() {
+    $('#img-container').empty()
+    getImages()
+});
 
 
 
@@ -71,41 +66,41 @@ var generateHTML = function() {
 }
 
 // Generate CSS Code output based on content in preview
-// const generateCSS = (url) => {
-//     var template = 
-// `<pre>
-// .hero-image {
-//     background-image: url('${url}');
-//     height: 100vh;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     position: relative;
-// }
+const generateCSS = (url) => {
+    var template = 
+`<textarea disabled>
+.hero-image {
+    background-image: url('${url}');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
     
-// .hero-text {
-//     text-align: center;
-//     position: absolute;
-//     display: flex;
-//     flex-direction: column;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     color: white;
-// }
+.hero-text {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
 
-// button {
-//     color: black;
-// 	text-align: center;
-// 	cursor: pointer;
-// 	border: none;
-// 	width: 50%;
-// }
+button {
+    color: black;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+}
 
-// </pre`;
-//     #CSS-Code.innerHTML = ''
-//     #CSS-Code.innerHTML = template
-// }
+</textarea>`;
+    $('#CSS-Code').empty()
+    $('#CSS-Code').append(template)
+}
 
 HTML_code.innerHTML = generateHTML()
 
