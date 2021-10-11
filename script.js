@@ -25,12 +25,6 @@ function getImages() {
                 // Changed the image source to the URL 
                 flkrImg.attr("src", imgURL)
                 
-                // When an image is clicked change the preview background image and CSS-code background URL
-                // flkrImg.on('click', function() {
-                //     $('#preview-container').css("background-image", `url(${imgURL})`);
-                //     generateCSS(imgURL)
-                // })
-                
                 // Attach image to image container
                 $('#img-container').append(flkrImg)
             }
@@ -51,7 +45,6 @@ fetchButton.on('click', function() {
 
 
 // Generate HTML Code output based on content in preview
-// TODO: look into cleaning up this function
 function generateHTML() {
     var inputTitle = $('#inputTitle').val()
     var inputSubtitle = $('#inputSubtitle').val()
@@ -114,29 +107,6 @@ $('#preview-container').on('keyup', function(){
     HTML_code.empty()
     HTML_code.append(generateHTML())
 })
-
-
-
-
-
-// THIS IS A SAMPLE I FOUND FOR THE CALL BUT I CANNOT FIGURE OUT HOW TO USE IT 
-
-// function jsonFlickrApi(rsp) {
-// window.rsp = rsp;
-// var s = "";
-// // https://live.staticflickr.com/{server-id}/{id}_{secret}_{size-suffix}.jpg
-// // http://www.flickr.com/photos/{user-id}/{photo-id}
-// s = "total number is: " + rsp.photos.photo.length + "<br/>";
-
-// for (var i = 0; i < rsp.photos.photo.length; i++) {
-//     photo = rsp.photos.photo[i];
-//     t_url = "https://live" + photo.photo + ".static.flickr.com/" +
-//         photo.server + "/" + photo.id + "_" + photo.secret + "_" + "t.jpg";
-//     p_url = "http://www.flickr.com/photos/" + photo.owner + "/" + photo.id;
-//     s += '<a href="' + p_url + '">' + '<img alt="' + photo.title +
-//         '"src="' + t_url + '"/>' + '</a>';
-// }
-
 
 
 // Hero
