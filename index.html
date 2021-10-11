@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= "stylesheet" href = "style.css">
+    <link rel="stylesheet" href ="style.css">
     <link rel="hero icon" href="hero_icon.jpg" />
 
-    <title>Hero App</title>
+    <title>Hero Generator</title>
 </head>
 <body>
-    <header id= "head-container">
+    <header id="head-container">
         <div class="tile-container">
-            <h1> Hero Title </h1>
+            <h1>Hero Generator</h1>
         </div>
-        <div id="quote-container"> "What quote would look like" 
+        <div id="quote-container">"What quote would look like"</div>
+        <div class="quoteBtn-container">
             <button id="quoteBtn"> New Quote </button>
         </div>
     </header>
     <section id="template-container">
-        <section id = "search-container">
-            <input type="text" placeholder="Search...">
-            <input type="submit" id="imageSearchBtn"></input>
-            <ul>
-                <li>Placeholder Item</li>
-            </ul>
+        <section id="search-container">
+            <div class="search-fild">
+                <input class="search-text" type="text" placeholder="Search...">
+                <input type="submit" id="imageSearchBtn"></input>
+            </div>
+            <div class="image-container">
+                <div class="img-1"></div>
+                <div class="img-2"></div>
+                <div class="img-3"></div>
+                <div class="img-4"></div>
+                <div class="img-5"></div>
+                <div class="img-6"></div>
+                <div class="img-7"></div>
+                <div class="img-8"></div>
+            </div>
         </section>
         <section id="preview-container">
             <input id="inputTitle" type="text" placeholder="Title Here">
@@ -33,7 +43,7 @@
         </section>
     </section>
     <section id="clear">
-        <button id = "clearBtn"> Clear </button>
+        <button id="clearBtn"> Clear </button>
     </section>
     <section id="coding-container">
         <section id="HTML-Code">
@@ -52,8 +62,6 @@
           <input class="flkr_srch" type="text" placeholder="Search" />
       </div>
     </section>
-
     <script src="script.js"></script>
 </body>
-
 </html>

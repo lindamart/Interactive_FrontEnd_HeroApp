@@ -1,3 +1,7 @@
+* {
+    font-family: sans-serif;
+}
+
 body {
     background-color: lightblue;
 }
@@ -7,18 +11,12 @@ body {
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
-    height: 160px;
+    height: 260px;
 }
 
 .tile-container {
-    height: 70px;
-    margin-top: 2em;
-}
-
-#quote-container {
-    display: flex;
-    height: 25px;
-    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 h1 {
@@ -27,21 +25,46 @@ h1 {
     margin: 0;
 }
 
+.tile-container {
+    font-size: 30px;
+}
+
+#quote-container {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    color:darkorchid;
+    font-size: 30px;
+}
+
+.quoteBtn-container {
+    display: flex;
+    justify-content: center;
+}
+
 #quoteBtn {
-    height: 20px;
-    margin-left: 1em;
+    height: 40px;
+    width: 100px; 
+    background-color: lightcoral;
+    font-size: 15px;
 }
 
 #template-container {
+    background-color: darkorchid;
     border: darkorchid 5px solid;
     padding: 10px;
     display: flex;
     justify-content: space-around;
-    height: 15em;
+    height: 30em;
     padding: 0 1em;
 }
 
 #search-container {
+    display: flex;
+    align-items: center;
+    align-items:center;
+    flex-direction: column;
+    background-color: darkred;
     border: darkred 3px solid;
     padding: 10px;
     padding: 10px;
@@ -49,18 +72,152 @@ h1 {
     width: 45%;
 }
 
-#imageSearchBtn {
-    cursor: pointer;
+.search-fild {
+    height: 2em;
+    padding-top: 1em;
+    padding-bottom: 2em;
 }
 
+.search-text {
+    color: ligrgb(16, 32, 0)htgreen;
+    font-size: 20px;
+}
+
+#imageSearchBtn {
+    cursor: pointer;
+    background-color: lightcoral;
+    font-size: 20px;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .img-1 {
+    background-image: url(Tropical-birds-toucan-colorful_1024x768.jpg);
+    background-size: 200px;
+    width: 200px;
+    height: 150px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+
+  .img-2 {
+    background-image: url(wQanXD.jpg);
+    background-size: 200px;
+    width: 200px;
+    height: 150px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+
+  .img-3 {
+    background-image: url(775930.jpg);
+    background-size: 200px;
+    width: 200px;
+    height: 150px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+
+  .img-4 {
+    background-image: url(colorful-exotic-bird-wallpaper-1024x768_18.jpg);
+    background-size: 200px;
+    width: 200px;
+    height: 150px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+
+  .img-5 {
+    background-image: url(exotic-peacock.jpg);
+    background-size: 200px;
+    width: 200px;
+    height: 150px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+
+  .img-6 {
+    background-image: url(parrot-pic-1024x768-b31e58a.png);
+    background-size: 200px;
+    width: 200px;
+    height: 150px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+
+  .img-7 {
+    background-image: url(xmitFl.jpg);
+    background-size: 200px;
+    width: 200px;
+    height: 150px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+
+  .img-8 {
+    background-image: url(central-america-native-1024x768.jpg);
+    background-size: 200px;
+    width: 200px;
+    height: 150px;
+    list-style-type: none;
+    background-repeat: no-repeat;
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+
 #preview-container {
-    border: black 3px solid;
+    background-image: url(Tropical-birds-toucan-colorful_1024x768.jpg);
+    background-size:cover;             
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-color: blue;
     padding: 10px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     padding: 10px;
     margin: .5em -.5em .5em 1em;
     width: 45%;
+}
+
+#inputTitle {
+    width: 40%;
+    color: rgb(16, 32, 0);
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: .5em;
+    text-align: center; 
+    opacity:0.5;
+}
+
+#inputSubtitle {
+    width: 40%;
+    color: rgb(16, 32, 0);
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: .5em;
+    text-align: center;
+    opacity:0.5;
+}
+
+#inputContact {
+    width: 40%;
+    color: rgb(16, 32, 0);
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center; 
+    opacity:0.5;
 }
 
 #clear {
@@ -69,8 +226,17 @@ h1 {
     padding: 10px;
 }
 
+#clearBtn {
+    height: 40px;
+    width: 100px; 
+    background-color: lightcoral;
+    font-size: 20px;
+    margin: 1em auto;
+}
+
 #coding-container {
-    border: black 5px solid;
+    background-color: rgb(0, 182, 152);
+    border: rgb(0, 182, 152) 5px solid;
     display: flex;
     justify-content: space-around;
     height: 15em;
@@ -78,6 +244,7 @@ h1 {
 }
 
 #HTML-Code {
+    background-color: gold;
     border: gold 5px solid;
     padding: 10px;
     margin: .5em 1em .5em -.5em;
@@ -85,19 +252,21 @@ h1 {
 }
 
 #CSS-Code {
+    background-color: green;
     border: green 5px solid;
     padding: 10px;
     margin: .5em -.5em .5em 1em;
     width: 45%;
 }
 
-.flkr_srchbtn, button {
-    font-size: small;
+.flkr_srchbtn, .flkr_srch {
+    font-size: 20px;
     font-weight: 500;
     color: black;
     padding: 15px 18px px 18px;
     border-radius: 1px;
     cursor: pointer;
+    margin-bottom: 2em;
 }
 
 .flkr_container {
