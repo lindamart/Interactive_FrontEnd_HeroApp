@@ -1,10 +1,9 @@
-# Title
-
-Hero Generator
+# Hero Generator
 
 # Description
 
-As a user I want to be able to search for an image and have the ability to manipulate a preview so that I can be presented with code that I can then copy and use in my HTML and CSS 
+In this group project we created an application where a user can search for an image and use it to create a sample of a Hero image with text.  
+They will also be presented with HTML and CSS code for the Hero image that they can then use in their own code. 
 
 # APIs
 
@@ -22,19 +21,32 @@ Mobile
 
 
 
-# List of Tasks or Acceptance Criteria
+# Acceptance Criteria
+
+
+As a user I want to be able to search for an image and have the ability to add text to a preview so that I can be presented with code that I can then copy and use in my HTML and CSS 
 
 When the user opens the app a quote of the day appears in the header section.
 
 When the user clicks the get new quote button a new quote appears.
 
-When the user gives a keyword in the search bar and presses submit they are presented with a group of images from flickr that matches their keyword.
+When the user gives a keyword in the image search bar and presses submit they are presented with a group of images from flickr that matches their keyword.
 
-When the user selects one of the images then their selection is shown in the preview model and automatically updates the CSS code
+When the user selects one of the images then their selection is shown in the preview model 
 
-The user has the ability to enter text to customize the content on their hero preview which automatically updates the HTML code
+When the image is presented the user has the option to add text to the preview
+
+The HTML & CSS code for the final image and text preview selected for the preview will show in the CSS and/or HTML code box
 
 When the user clicks the clear button, all previously populated user info is reset
+
+# Credits
+
+W3 Schools: https://www.w3schools.com/
+
+MDN Web Docs: https://developer.mozilla.org/en-US
+
+Flickr Docs: https://www.flickr.com/services/api/
 
 
 # First Task for each member
