@@ -1,10 +1,12 @@
 * {
+
     font-family: sans-serif;
     box-sizing: border-box;
+
 }
 
 body {
-    background-color: lightblue;
+	background-color: lightblue;
 }
 
 #head-container {
@@ -172,12 +174,51 @@ img:hover {
     font-weight: bolder;
     text-align: center; 
     opacity:0.5;
-}
+
+/* 	border: pink 3px solid;
+	display: flex;
+	justify-content: center;
+} */
+
+/* h1 {
+	justify-content: start;
+} */
+
+/* #template-container {
+	border: darkorchid 5px solid;
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	height: 35vh;
+} */
+
+/* #search-container {
+	border: darkred 3px solid;
+	padding: 10px;
+	overflow-y: scroll;
+} */
+
+/* #img-container {
+	display: flex;
+	flex-wrap: wrap;
+} */
+
+/* .flkrImgResult {
+	width: 25%;
+} */
+
+/* #preview-container {
+	border: black 3px solid;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+} */
 
 #clear {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+	display: flex;
+	justify-content: center;
+	padding: 10px;
 }
 
 #clearBtn {
@@ -252,3 +293,79 @@ img:hover {
       max-width: 100%;
     }
   }
+
+/* 	border: black 5px solid;
+	display: flex;
+} */
+
+/* #HTML-Code {
+	border: gold 5px solid;
+	padding: 10px;
+} */
+
+/* #CSS-Code {
+	border: green 5px solid;
+	padding: 10px;
+} */
+
+/* #HTML-Code,
+#CSS-Code,
+#search-container,
+#preview-container {
+	flex-basis: 50%;
+} */
+
+/* .flkr_srchbtn,
+button {
+	font-size: small;
+	font-weight: 500;
+	color: black;
+	padding: 15px 18px px 18px;
+	border-radius: 1px;
+	cursor: pointer;
+} */
+
+/* #preview-container {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+} */
+/* 
+#inputTitle {
+	font-size: calc(1.375rem + 1.5vw);
+	margin-top: 0;
+	margin-bottom: .5rem;
+	font-weight: 500;
+	line-height: 1.2;
+	color: white;
+	text-align: center;
+	background-color: transparent;
+	border: none;
+} */
+/* #inputSubtitle {
+	margin-top: 0;
+	margin-bottom: 1rem;
+	color: white;
+	text-align: center;
+	background-color: transparent;
+	border: none;
+} */
+/* #inputContact {
+	color: black;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+}  */
+
+/* textarea {
+	width: 100%;
+	height: 200px;
+	resize: none;
+	font-size: .75rem;
+} */
+
