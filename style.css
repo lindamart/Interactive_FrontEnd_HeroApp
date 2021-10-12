@@ -1,3 +1,8 @@
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
 body {
     background-color: lightblue;
 }
@@ -5,30 +10,168 @@ body {
 #head-container {
     border: pink 3px solid;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    height: 260px;
+}
+
+.tile-container {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 h1 {
     justify-content: start;
+    text-align: center;
+    margin: 0;
+}
+
+.tile-container {
+    font-size: 30px;
+}
+
+#quote-container {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    color:darkorchid;
+    font-size: 30px;
+}
+
+.quoteBtn-container {
+    display: flex;
+    justify-content: center;
+}
+
+#quoteBtn {
+    height: 40px;
+    width: 100px; 
+    background-color: lightcoral;
+    font-size: 15px;
 }
 
 #template-container {
+    background-color: darkorchid;
     border: darkorchid 5px solid;
     padding: 10px;
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+    height: 30em;
+    padding: 0 1em;
 }
 
 #search-container {
-    border: darkred 3px solid;
+    display: flex;
+    align-items: center;
+    align-items:center;
+    flex-direction: column;
+    background-color: rgb(0, 194, 253);
+    border: rgb(0, 194, 253) 3px solid;
     padding: 10px;
+    padding: 10px;
+    margin: .5em 1em .5em -.5em;
+    width: 50%;
+}
+
+.search-field {
+    height: 2em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.search-text {
+    color: ligrgb(16, 32, 0)htgreen;
+    font-size: 20px;
+}
+
+#imageSearchBtn {
+    cursor: pointer;
+    background-color: lightcoral;
+    font-size: 15px;
+    width: 70px;
+    height: 28px;
+}
+
+#scroller {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+  }
+
+.image-row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    justify-content: center;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+    margin-top: 1em;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .image-column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 28%;
+    padding: 0 4px;
+  }
+  
+  .image-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+img:hover {
+    transform: scale(1.3);
+    opacity: .9;
 }
 
 #preview-container {
-    border: black 3px solid;
+    background-image: url(Tropical-birds-toucan-colorful_1024x768.jpg);
+    background-size:cover;             
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-color: blue;
     padding: 10px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    padding: 10px;
+    margin: .5em -.5em .5em 1em;
+    width: 50%;
+}
+
+#inputTitle {
+    width: 40%;
+    color: rgb(16, 32, 0);
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: .5em;
+    text-align: center; 
+    opacity:0.5;
+}
+
+#inputSubtitle {
+    width: 40%;
+    color: rgb(16, 32, 0);
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: .5em;
+    text-align: center;
+    opacity:0.5;
+}
+
+#inputContact {
+    width: 40%;
+    color: rgb(16, 32, 0);
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center; 
+    opacity:0.5;
 }
 
 #clear {
@@ -37,26 +180,75 @@ h1 {
     padding: 10px;
 }
 
+#clearBtn {
+    height: 40px;
+    width: 100px; 
+    background-color: lightcoral;
+    font-size: 20px;
+    margin: 1em auto;
+}
+
 #coding-container {
-    border: black 5px solid;
+    background-color: rgb(0, 182, 152);
+    border: rgb(0, 182, 152) 5px solid;
     display: flex;
     justify-content: space-around;
+    height: 15em;
+    padding: 0 1em;
 }
 
 #HTML-Code {
+    background-color: gold;
     border: gold 5px solid;
     padding: 10px;
+    margin: .5em 1em .5em -.5em;
+    width: 45%;
 }
 
 #CSS-Code {
+    background-color: green;
     border: green 5px solid;
     padding: 10px;
+    margin: .5em -.5em .5em 1em;
+    width: 45%;
 }
 
-.flkr_srchbtn, button {
-    font-size: small;
+.flkr_srchbtn, .flkr_srch {
+    font-size: 20px;
     font-weight: 500;
     color: black;
     padding: 15px 18px px 18px;
     border-radius: 1px;
     cursor: pointer;
+    margin-bottom: 2em;
+}
+
+.flkr_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1035px) {
+    .image-column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 878px) {
+    .image-row {
+      margin-top: 2em;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 878px) {
+    .image-column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
