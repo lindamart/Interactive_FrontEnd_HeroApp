@@ -4,19 +4,26 @@ var HTML_code = $('#HTML-Code');
 var previewContainer = document.querySelector('#preview-container')
 
 function getImages() {
-    var testKeyword = document.querySelector("#fetch-input").value
-    var requestUrl = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=ff186f827916d3c42a8a2f504e5903d4&tags=${testKeyword}&format=json&nojsoncallback=1`;
+    var keyword = document.querySelector("#fetch-input").value
 
-    fetch(requestUrl)
+    var requestUrl = `https://api.unsplash.com/search/photos?page=1&query=${keyword}&orientation=landscape&per_page=24`
+
+    fetch(requestUrl, {
+        headers: {
+        "Authorization": "Client-ID ou_uv3FSxObsa26JuQwTEMxvsIjEHMNslk552sjVNt8",
+        "Accept-Version": "v1",
+        "Set-Cookie": "SameSite=None Secure"
+        }})
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            var photos = data.photos.photo
+            console.log(data)
+            var photos = data.results
 
             // Loop over photos
-            for (var i = 0; i < 8; i++) {
-                var imgURL = `https://live.staticflickr.com/${photos[i].server}/${photos[i].id}_${photos[i].secret}.jpg`
+            for (var i = 0; i < photos.length; i++) {
+                var imgURL = photos[i].urls.regular
                 
                 // Created image element
                 var flkrImg = $("<img>")
@@ -26,12 +33,12 @@ function getImages() {
                 flkrImg.attr("src", imgURL)
                 
                 // Attach image to image container
-                $('#img-container').append(flkrImg)
+                $('.image-row').append(flkrImg)
             }
         });
 }
 
-$('#img-container').on('click', '.flkrImgResult', function() {
+$('.image-row').on('click', '.flkrImgResult', function() {
     var imgURL = this.src
     $('#preview-container').css("background-image", `url(${imgURL})`);
     generateCSS(imgURL)
