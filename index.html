@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel= "stylesheet" href = "style.css">
+    <link rel="stylesheet" href ="style.css">
     <link rel="hero icon" href="hero_icon.jpg" />
 
-    <title>Hero App</title>
+    <title>Hero Generator</title>
 </head>
 <body>
-    <header id = "head-container">
-        <h1> Hero App </h1>
-        <div id="quote-container"> "What quote would look like" </div>
-    <button id="quoteBtn"> New Quote </button>
+    <header id="head-container">
+        <div class="tile-container">
+            <h1>Hero Generator</h1>
+        </div>
+        <div id="quote-container">"What quote would look like"</div>
+        <div class="quoteBtn-container">
+            <button id="quoteBtn"> New Quote </button>
+        </div>
     </header>
     <section id="template-container">
-        <section id = "search-container">
-            <input type="text" placeholder="Search..." id="fetch-input">
-            <input type="submit" id="imageSearchBtn"></input>
-            <div id="img-container">
-                <!-- <li>Placeholder Item</li> -->
+        <section id="search-container">
+            <div class="search-fild">
+                <input class="search-text" type="text" placeholder="Search..." id="fetch-input">
+                <button type="submit" id="imageSearchBtn">Submit</button>
+            </div>
+            <div class="image-row" id="scroller">
+                <div class="image-column">
+                    <img src="Tropical-birds-toucan-colorful_1024x768.jpg"></img>
+                    <img src="wQanXD.jpg"></img>
+                    <img src="775930.jpg"></img>
+                    <img src="exotic-peacock.jpg"></img>
+                </div>
+                <div class="image-column">
+                    <img src="colorful-exotic-bird-wallpaper-1024x768_18.jpg"></img>
+                    <img src="xmitFl.jpg"></img>
+                    <img src="2can-1.jfif"></img>
+                    <img src="parrot-pic-1024x768-b31e58a.png"></img>
+                </div>
+                <div class="image-column">
+                    <img src="fluffy-neck.jpg"></img>
+                    <img src="orange-black.jpg"></img>
+                    <img src="central-america-native-1024x768.jpg"></img>
+                    <img src="green-bird.jfif"></img>
+                </div>
+                <div class="image-column">
+                    <img src="blue-beak.jpg"></img>
+                    <img src="twins.jpg"></img>
+                    <img src="ugly-baby.jpg"></img>
+                    <img src="vulture-1.jpg"></img>
+                </div>
+                <div class="image-column">
+                    <img src="red-chest.jpg"></img>
+                    <img src="no-neck-rainbow.jpg"></img>
+                    <img src="goldy.jfif"></img>
+                    <img src="red4-head.jfif"></img>
+                </div>
+                <div class="image-column">
+                    <img src="spotted-wood-pecker.jpg"></img>
+                    <img src="orange-beak.jpg"></img>
+                    <img src="twin-fishers.jpg"></img>
+                    <img src="owl-1.jpg"></img>
+                </div>
+                <div class="image-column">
+                    <img src="shinny-purple.jpg"></img>
+                    <img src="blue-jay.jpg"></img>
+                    <img src="red-berries.jpg"></img>
+                    <img src="mohawk-black-eyes.jpg"></img>
+                </div>
+                <div class="image-column">
+                    <img src="yellow-bluegreen.jpg"></img>
+                    <img src="bluebanned.jpg"></img>
+                    <img src="bluegreen.jpg"></img>
+                    <img src="african-grey.jpg"></img>
+                </div>
             </div>
         </section>
         <section id="preview-container">
@@ -31,7 +83,7 @@
         </section>
     </section>
     <section id="clear">
-        <button id = "clearBtn"> Clear </button>
+        <button id="clearBtn"> Clear </button>
     </section>
     <section id="coding-container">
         <section id="HTML-Code">
@@ -69,20 +121,9 @@ button {
             </textarea>
         </section>
     </section>
-    <!-- <section class="flkr_container">
-      <div>
-          <ul class="flkrList"></ul>
-      </div>
-
-
-        <div class="flkr_btn">
-            <button class="flkr_srchbtn" id="fetch-button">Search</button>
-            <input class="flkr_srch" id="fetch-input" type="text" placeholder="Search" />
-        </div>
-    </section> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
     <script src="script.js"></script>
 </body>
-
 </html>
