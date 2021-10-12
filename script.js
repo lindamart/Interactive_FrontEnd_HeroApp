@@ -6,13 +6,13 @@ var previewContainer = document.querySelector('#preview-container')
 function getImages() {
     var keyword = document.querySelector("#fetch-input").value
 
-    var requestUrl = `https://api.unsplash.com/search/photos?page=1&query=${keyword}&orientation=landscape`
+    var requestUrl = `https://api.unsplash.com/search/photos?page=1&query=${keyword}&orientation=landscape&per_page=24`
 
     fetch(requestUrl, {
         headers: {
         "Authorization": "Client-ID ou_uv3FSxObsa26JuQwTEMxvsIjEHMNslk552sjVNt8",
         "Accept-Version": "v1",
-        "Set-Cookie": "SameSite=None and Secure"
+        "Set-Cookie": "SameSite=None Secure"
         }})
         .then(function (response) {
             return response.json();
