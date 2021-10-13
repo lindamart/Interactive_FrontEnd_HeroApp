@@ -2,6 +2,30 @@ var flkrList = document.querySelector('ul');
 var fetchButton = $('#imageSearchBtn')
 var HTML_code = $('#HTML-Code');
 var previewContainer = document.querySelector('#preview-container')
+var quoteContainer = $('#quote-container')
+var quoteApiKey = "dceb592dfa32b6976e23edb9faa390d4984c31e3"
+var quoteOfDayUrl = `https://zenquotes.io/api/today/${quoteApiKey}`
+
+
+// Functions
+function getQuote() {
+    fetch("https://type.fit/api/quotes")
+    .then(res => {
+        return res.json()
+    })
+    .then(data => {
+        let chosenQuote = data[Math.floor(Math.random() * data.length)]
+        console.log(chosenQuote.author)
+        let author = ''
+        if (chosenQuote.author == null){
+            author = 'anonymous'
+        } else {
+            author = chosenQuote.author
+        }
+        quoteContainer.empty()
+        quoteContainer.append(`"${chosenQuote.text}" -${author}`)
+    })
+}
 
 function getImages() {
     var keyword = document.querySelector("#fetch-input").value
@@ -37,19 +61,6 @@ function getImages() {
             }
         });
 }
-
-$('.image-row').on('click', '.flkrImgResult', function() {
-    var imgURL = this.src
-    $('#preview-container').css("background-image", `url(${imgURL})`);
-    generateCSS(imgURL)
-})
-
-fetchButton.on('click', function() {
-    $('#img-container').empty()
-    getImages()
-});
-
-
 
 // Generate HTML Code output based on content in preview
 function generateHTML() {
@@ -108,12 +119,28 @@ button {
     $('#CSS-Code').append(template)
 }
 
+// Initialize App
 HTML_code.append(generateHTML())
+getQuote()
 
+// Event Listeners
 $('#preview-container').on('keyup', function(){
     HTML_code.empty()
     HTML_code.append(generateHTML())
 })
+
+$('#quoteBtn').on('click', getQuote)
+
+$('.image-row').on('click', '.flkrImgResult', function() {
+    var imgURL = this.src
+    $('#preview-container').css("background-image", `url(${imgURL})`);
+    generateCSS(imgURL)
+})
+
+fetchButton.on('click', function() {
+    $('#img-container').empty()
+    getImages()
+});
 
 
 // Hero
