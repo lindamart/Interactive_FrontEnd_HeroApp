@@ -138,11 +138,30 @@ $('.image-row').on('click', '.flkrImgResult', function() {
 })
 
 fetchButton.on('click', function() {
-    $('#img-container').empty()
+    $('.image-row').empty()
     getImages()
 });
 
-new ClipboardJS('.copy-button');
+
+// Copy to Clipboard: any element with ".copy-button" class acts as a copy trigger and targets the data-clipboard-target property set on this "trigger"
+var clipboard = new ClipboardJS('.copy-button');
+
+// do someothing when the copy to clipboard triggers
+clipboard.on('success', function(e) {
+    console.log('Action:', e.action);
+    console.log('Text:', e.text);
+    console.log('Trigger:', e.trigger);
+
+    e.clearSelection();
+});
+
+// do something when copy to clipboard fails
+clipboard.on('error', function(e) {
+    console.log('Action:', e.action);
+    console.log('Trigger:', e.trigger);
+});
+
+
 
 
 
