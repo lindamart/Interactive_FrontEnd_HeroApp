@@ -3,11 +3,15 @@
 }
 
 body {
-	background-color: lightblue;
+	/* background-color: #FFF0E5; */
+	background-color: #0060AA;
+	background-image: radial-gradient(circle, #03b6f0, #11119e, #07064d);
 }
 
 #head-container {
 	border: pink 3px solid;
+	background-color: #FFF0E5;
+	margin: 10px;
 	display: flex;
 	justify-content: center;
 }
@@ -17,7 +21,9 @@ h1 {
 }
 
 #template-container {
-	border: darkorchid 5px solid;
+	background-color: #FFED10;
+	background-image: radial-gradient(circle, #ffd700, #fdeb00, #fcff00);
+	/* border: darkorchid 5px solid; */
 	padding: 10px;
 	display: flex;
 	justify-content: space-around;
@@ -26,7 +32,10 @@ h1 {
 }
 
 #search-container {
-	border: darkred 3px solid;
+	/* border: darkred 3px solid; */
+	background-color: #E20025;
+	background-image: radial-gradient(circle, #e20025, #b50622, #8c0b1f);
+
 	padding: 10px;
 	overflow-y: scroll;
 }
@@ -41,7 +50,9 @@ h1 {
 }
 
 #preview-container {
-	border: black 3px solid;
+	/* border: black 3px solid; */
+	background-color: #E20025;
+	background-image: radial-gradient(circle, #e20025, #b50622, #8c0b1f);
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
@@ -55,19 +66,31 @@ h1 {
 }
 
 #coding-container {
-	border: black 5px solid;
+	/* border: black 5px solid; */
 	display: flex;
 	/* justify-content: space-around; */
 }
 
 #HTML-Code {
-	border: gold 5px solid;
+	background-color: #010101;
 	padding: 10px;
 }
 
+#HTML-Code textarea {
+    background-color: #1E1F1F;
+	border: grey 1px solid;
+    color: lightblue;
+}
+
 #CSS-Code {
-	border: green 5px solid;
+	background-color: #010101;
 	padding: 10px;
+}
+
+#CSS-Code textarea {
+    background-color: #1E1F1F;
+	border: grey 1px solid;
+    color: lightblue;
 }
 
 
@@ -140,4 +163,17 @@ textarea {
 	height: 200px;
 	resize: none;
 	font-size: .75rem;
+}
+
+#placeholder { /* placeholder test image for how pictures will react */
+	/* border: red 3px solid; */
+	margin: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 5px;
+}
+
+#placeholder:hover {
+	box-shadow: 0 0 6px rgb(35 173 255);
+	cursor: pointer;
+	transform: translateY(-2%);
 }
