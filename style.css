@@ -64,7 +64,7 @@ h1 {
 #quoteBtn {
 	/* height: 40px;
 	width: 100px; */
-	background-color: lightcoral;
+	/* background-color: lightcoral; */
 	font-size: 15px;
 }
 
@@ -117,7 +117,7 @@ h1 {
 	margin-left: 6em;
 	margin-top: .7em; */
 	cursor: pointer;
-	background-color: lightcoral;
+	/* background-color: lightcoral; */
 	font-size: 15px;
 	/* width: 30%;
 	height: 50%; */
@@ -162,7 +162,7 @@ h1 {
 
 .flkrImgResult {
 	padding: 0px;
-	height: auto;
+	height: 100%;
 }
 
 .imgDiv:hover,
@@ -200,10 +200,11 @@ h1 {
 #viewCodeBtn {
 	/* height: 40px;
 	width: 100px; */
-	background-color: lightcoral;
+	/* background-color: lightcoral; */
 	font-size: 20px;
 	/* margin: 1em auto; */
 	padding: 10px;
+	margin-right: 5px;
 }
 
 .coding-containers {
