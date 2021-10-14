@@ -3,16 +3,21 @@
 	box-sizing: border-box;
 }
 
-html {
+/* html {
 	background-color: #505c7c;
-	/* background-color: none; */
+	background-image: radial-gradient(circle, #505c7c, #282e3c, #242424);
+} */
+
+html,
+body {
+	height: 100%;
+	background-color: #505c7c;
 	background-image: radial-gradient(circle, #505c7c, #282e3c, #242424);
 }
 
-body {
-	/* background-color: lightblue; */
+/* body {
 	height: 100vh;
-}
+} */
 
 #head-container {
 	display: flex;
@@ -163,6 +168,7 @@ h1 {
 .flkrImgResult {
 	padding: 0px;
 	height: 100%;
+	/* vertical-align: bottom; */
 }
 
 .imgDiv:hover,

@@ -29,9 +29,7 @@ function getQuote() {
 
 function getImages() {
     var keyword = document.querySelector("#fetch-input").value
-
     var requestUrl = `https://api.unsplash.com/search/photos?page=1&query=${keyword}&orientation=landscape&per_page=24`
-
     fetch(requestUrl, {
         headers: {
         "Authorization": "Client-ID ou_uv3FSxObsa26JuQwTEMxvsIjEHMNslk552sjVNt8",
@@ -124,7 +122,7 @@ button {
     $('#CSS-Code').append(template)
 }
 
-// Theme switcher
+// Theme switcher functions
 function addBatmanClasses () {
     // Remove superman classes
     $('body').removeClass('superman-blue')
@@ -132,7 +130,6 @@ function addBatmanClasses () {
     $('#search-container').removeClass('superman-red')
     $('#preview-container').removeClass('superman-red')
     $('#template-container').removeClass('superman-yellow')
-
     // Add batman classes
     $('body').addClass('batman-dark')
     $('#head-container').addClass('batman-dark')
@@ -148,7 +145,6 @@ function addSupermanClasses () {
     $('#search-container').removeClass('batman-dark')
     $('#preview-container').removeClass('batman-dark')
     $('#template-container').removeClass('batman-yellow')
-
     // Add superman classes
     $('body').addClass('superman-blue')
     $('#head-container').addClass('superman-blue')
@@ -157,50 +153,66 @@ function addSupermanClasses () {
     $('#template-container').addClass('superman-yellow')
 }
 
-$('#batman').on('click', addBatmanClasses)
-$('#superman').on('click', addSupermanClasses)
+
 
 // Initialize App
 HTML_code.append(generateHTML())
 getQuote()
 
 // Event Listeners
-$('#preview-container').on('keyup', function(){
+
+// Add theme classes
+$('#batman').on('click', addBatmanClasses)
+$('#superman').on('click', addSupermanClasses)
+
+// View HTML codeblock
+$('#viewCodeBtn').on('click', function(){
     HTML_code.empty()
     HTML_code.append(generateHTML())
 })
 
-$('#quoteBtn').on('click', getQuote)
-
+// Add chosen image to preview and to CSS codeblock
 $('.image-row').on('click', '.flkrImgResult', function() {
     var imgURL = this.src
     $('#preview-container').css("background-image", `url(${imgURL})`);
     generateCSS(imgURL)
 })
 
+// Get a new quote on button click
+$('#quoteBtn').on('click', getQuote)
+
+// Fetch images
 fetchButton.on('click', function() {
     $('.image-row').empty()
     getImages()
 });
 
+// Modal + slide in/out effects
 $('#viewCodeBtn').on('click', () => {
+    $('.modal-content').removeClass('animate__fadeOutLeft')
+    $('.modal-content').addClass('animate__fadeInLeft')
     $('.modal').addClass('is-active');
 })
-
 $('.modal-close').on('click', () => {
-    $('.modal').removeClass('is-active');
+    $('.modal-content').removeClass('animate__fadeInLeft')
+    $('.modal-content').addClass('animate__fadeOutLeft')
+    setTimeout(() => {
+        $('.modal').removeClass('is-active');
+    },1000)
 })
-
 $('.modal-background').on('click', () => {
-    $('.modal').removeClass('is-active');
+    $('.modal-content').removeClass('animate__fadeInLeft')
+    $('.modal-content').addClass('animate__fadeOutLeft')
+    setTimeout(() => {
+        $('.modal').removeClass('is-active');
+    },1000)
 })
-
 
 
 // Copy to Clipboard: any element with ".copy-button" class acts as a copy trigger and targets the data-clipboard-target property set on this "trigger"
 var clipboard = new ClipboardJS('.copy-button');
 
-// do someothing when the copy to clipboard triggers
+// Show message when clipboard succeeds
 clipboard.on('success', function(e) {
     $('#copy-notification').text('Codeblock copied to clipboard!').css('display', 'block')
     setTimeout(() => {
@@ -210,7 +222,7 @@ clipboard.on('success', function(e) {
     e.clearSelection();
 });
 
-// do something when copy to clipboard fails
+// Show message when clipboard fails
 clipboard.on('error', function(e) {
     $('#copy-notification').text('Press CTRL/CMD + C to Copy!').css('display', 'block')
     setTimeout(() => {
@@ -220,34 +232,9 @@ clipboard.on('error', function(e) {
 
 
 
-
-
 // Hero
 // Key:
 // ff186f827916d3c42a8a2f504e5903d4
 
 // Secret:
 // 6435730407f220a2
-
-// const getSuperheroQuote = () => {
-//     fetch('https://superhero-quotes.herokuapp.com/grab?banner=dcu', {headers: {
-//         "mode": "no-cors"
-//     }})
-//     .then(res => {
-//         return res.json()
-//     })
-//     .then(data => {
-//         console.log(data)
-//     })
-// }
-
-// getSuperheroQuote()
-
-
-
-
-
-
-
-
-
