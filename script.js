@@ -17,27 +17,179 @@ function getImages() {
             // Loop over photos
             for (var i = 0; i < 8; i++) {
                 var imgURL = `https://live.staticflickr.com/${photos[i].server}/${photos[i].id}_${photos[i].secret}.jpg`
-                
+
                 // Created image element
                 var flkrImg = $("<img>")
                 flkrImg.addClass('flkrImgResult')
-                
+
                 // Changed the image source to the URL 
                 flkrImg.attr("src", imgURL)
-                
+
                 // Attach image to image container
                 $('#img-container').append(flkrImg)
             }
         });
-}
 
-$('#img-container').on('click', '.flkrImgResult', function() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+$('#img-container').on('click', '.flkrImgResult', function () {
     var imgURL = this.src
     $('#preview-container').css("background-image", `url(${imgURL})`);
     generateCSS(imgURL)
 })
 
-fetchButton.on('click', function() {
+fetchButton.on('click', function () {
     $('#img-container').empty()
     getImages()
 });
@@ -66,8 +218,8 @@ function generateHTML() {
 
 // Generate CSS Code output based on content in preview
 function generateCSS(url) {
-    var template = 
-`<textarea disabled>
+    var template =
+        `<textarea disabled>
 .hero-image {
     background-image: url('${url}');
     height: 100vh;
@@ -103,7 +255,7 @@ button {
 
 HTML_code.append(generateHTML())
 
-$('#preview-container').on('keyup', function(){
+$('#preview-container').on('keyup', function () {
     HTML_code.empty()
     HTML_code.append(generateHTML())
 })
