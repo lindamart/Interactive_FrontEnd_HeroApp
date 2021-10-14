@@ -69,7 +69,7 @@ function generateHTML() {
     var inputContact = $('#inputContact').val()
     let dynamicHTML = `
     
-    <textarea disabled> 
+    <textarea id="html" class="copy-button" readonly data-clipboard-target="#html"> 
             <div class="hero-image">
                 <div class="hero-text">
                     <h1>${inputTitle}</h1>
@@ -85,7 +85,7 @@ function generateHTML() {
 // Generate CSS Code output based on content in preview
 function generateCSS(url) {
     var template = 
-`<textarea disabled>
+`<textarea id="css" class="copy-button" readonly data-clipboard-target="#css">
 .hero-image {
     background-image: url('${url}');
     height: 100vh;
@@ -141,6 +141,9 @@ fetchButton.on('click', function() {
     $('#img-container').empty()
     getImages()
 });
+
+new ClipboardJS('.copy-button');
+
 
 
 // Hero
