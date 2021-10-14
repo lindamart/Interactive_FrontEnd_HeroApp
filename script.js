@@ -50,14 +50,19 @@ function getImages() {
                 var imgURL = photos[i].urls.regular
                 
                 // Created image element
+                var imgDiv = $('<div>')
+                imgDiv.addClass('imgDiv')
+
                 var flkrImg = $("<img>")
                 flkrImg.addClass('flkrImgResult')
                 
                 // Changed the image source to the URL 
                 flkrImg.attr("src", imgURL)
+
+                imgDiv.append(flkrImg)
                 
                 // Attach image to image container
-                $('.image-row').append(flkrImg)
+                $('.image-row').append(imgDiv)
             }
         });
 }
@@ -119,6 +124,42 @@ button {
     $('#CSS-Code').append(template)
 }
 
+// Theme switcher
+function addBatmanClasses () {
+    // Remove superman classes
+    $('body').removeClass('superman-blue')
+    $('#head-container').removeClass('superman-blue')
+    $('#search-container').removeClass('superman-red')
+    $('#preview-container').removeClass('superman-red')
+    $('#template-container').removeClass('superman-yellow')
+
+    // Add batman classes
+    $('body').addClass('batman-dark')
+    $('#head-container').addClass('batman-dark')
+    $('#search-container').addClass('batman-dark')
+    $('#preview-container').addClass('batman-dark')
+    $('#template-container').addClass('batman-yellow')
+}
+
+function addSupermanClasses () {
+    // Remove batman classes
+    $('body').removeClass('batman-dark')
+    $('#head-container').removeClass('batman-dark')
+    $('#search-container').removeClass('batman-dark')
+    $('#preview-container').removeClass('batman-dark')
+    $('#template-container').removeClass('batman-yellow')
+
+    // Add superman classes
+    $('body').addClass('superman-blue')
+    $('#head-container').addClass('superman-blue')
+    $('#search-container').addClass('superman-red')
+    $('#preview-container').addClass('superman-red')
+    $('#template-container').addClass('superman-yellow')
+}
+
+$('#batman').on('click', addBatmanClasses)
+$('#superman').on('click', addSupermanClasses)
+
 // Initialize App
 HTML_code.append(generateHTML())
 getQuote()
@@ -141,6 +182,19 @@ fetchButton.on('click', function() {
     $('.image-row').empty()
     getImages()
 });
+
+$('#viewCodeBtn').on('click', () => {
+    $('.modal').addClass('is-active');
+})
+
+$('.modal-close').on('click', () => {
+    $('.modal').removeClass('is-active');
+})
+
+$('.modal-background').on('click', () => {
+    $('.modal').removeClass('is-active');
+})
+
 
 
 // Copy to Clipboard: any element with ".copy-button" class acts as a copy trigger and targets the data-clipboard-target property set on this "trigger"
@@ -174,4 +228,26 @@ clipboard.on('error', function(e) {
 
 // Secret:
 // 6435730407f220a2
+
+// const getSuperheroQuote = () => {
+//     fetch('https://superhero-quotes.herokuapp.com/grab?banner=dcu', {headers: {
+//         "mode": "no-cors"
+//     }})
+//     .then(res => {
+//         return res.json()
+//     })
+//     .then(data => {
+//         console.log(data)
+//     })
+// }
+
+// getSuperheroQuote()
+
+
+
+
+
+
+
+
 
