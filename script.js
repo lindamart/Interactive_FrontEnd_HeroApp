@@ -148,17 +148,20 @@ var clipboard = new ClipboardJS('.copy-button');
 
 // do someothing when the copy to clipboard triggers
 clipboard.on('success', function(e) {
-    console.log('Action:', e.action);
-    console.log('Text:', e.text);
-    console.log('Trigger:', e.trigger);
+    $('#copy-notification').text('Codeblock copied to clipboard!').css('display', 'block')
+    setTimeout(() => {
+        $('#copy-notification').text('').css('display', 'none')
+    }, 2000)
 
     e.clearSelection();
 });
 
 // do something when copy to clipboard fails
 clipboard.on('error', function(e) {
-    console.log('Action:', e.action);
-    console.log('Trigger:', e.trigger);
+    $('#copy-notification').text('Press CTRL/CMD + C to Copy!').css('display', 'block')
+    setTimeout(() => {
+        $('#copy-notification').text('').css('display', 'none')
+    }, 2000)
 });
 
 
