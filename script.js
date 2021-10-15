@@ -137,6 +137,7 @@ button {
     $('#CSS-Code').append(template)
 }
 
+
 // Theme switcher functions
 function addBatmanClasses () {
     // Remove superman classes
@@ -149,6 +150,13 @@ function addBatmanClasses () {
     $('#CSS-Code').removeClass('superman-red')
     $('.hero-image').removeClass('superman-image')
     $('footer').removeClass('superman-red')
+      
+          // Remove green-lantern classes
+    $('body').removeClass('green-lantern-green')
+    $('#head-container').removeClass('green-lantern-green')
+    $('#search-container').removeClass('green-lantern-green')
+    $('#preview-container').removeClass('green-lantern-green')
+    $('#template-container').removeClass('green-lantern-dark')
 
 
 
@@ -165,12 +173,12 @@ function addBatmanClasses () {
     $('.hero-text a').css('color', '#ffed10')
 
 
-
 }
 
 function addSupermanClasses () {
     // Remove batman classes
     $('body').removeClass('batman-dark')
+
     $('main').removeClass('batman-dark')
     $('#search-container').removeClass('batman-dark')
     $('#preview-container').removeClass('batman-dark')
@@ -179,6 +187,13 @@ function addSupermanClasses () {
     $('#CSS-Code').removeClass('batman-yellow')
     $('.hero-image').removeClass('batman-image')
     $('footer').removeClass('batman-yellow')
+
+    // Remove green-lantern classes
+    $('body').removeClass('green-lantern-green')
+    $('#head-container').removeClass('green-lantern-green')
+    $('#search-container').removeClass('green-lantern-green')
+    $('#preview-container').removeClass('green-lantern-green')
+    $('#template-container').removeClass('green-lantern-dark')
 
 
     // Add superman classes
@@ -196,6 +211,38 @@ function addSupermanClasses () {
 
 
 }
+
+function addGreenLanternClasses () {
+    // Remove batman classes
+    $('body').removeClass('batman-dark')
+    $('main').removeClass('batman-dark')
+    $('#search-container').removeClass('batman-dark')
+    $('#preview-container').removeClass('batman-dark')
+    $('#template-container').removeClass('batman-yellow')
+    $('#HTML-Code').removeClass('batman-yellow')
+    $('#CSS-Code').removeClass('batman-yellow')
+    $('.hero-image').removeClass('batman-image')
+    $('footer').removeClass('batman-yellow')
+
+    // Removes superman classes
+    $('body').removeClass('superman-blue')
+    $('main').removeClass('superman-blue')
+    $('#search-container').removeClass('superman-red')
+    $('#preview-container').removeClass('superman-red')
+    $('#template-container').removeClass('superman-yellow')
+    $('#HTML-Code').removeClass('superman-red')
+    $('#CSS-Code').removeClass('superman-red')
+    $('.hero-image').removeClass('superman-image')
+    $('footer').removeClass('superman-red')
+
+    // Add green-lantern classes
+    $('body').addClass('green-lantern-green')
+    $('#head-container').addClass('green-lantern-green')
+    $('#search-container').addClass('green-lantern-green')
+    $('#preview-container').addClass('green-lantern-green')
+    $('#template-container').addClass('green-lantern-dark')
+}
+$('#green-lantern').on('click', addGreenLanternClasses)
 
 
 
@@ -231,6 +278,7 @@ fetchButton.on('click', function() {
     getImages()
 });
 
+
 // Modal + slide in/out effects
 $('#viewCodeBtn').on('click', () => {
     $('.modal-content').removeClass('animate__fadeOutLeft')
@@ -251,6 +299,7 @@ $('.modal-background').on('click', () => {
         $('.modal').removeClass('is-active');
     },1000)
 })
+
 
 
 // Copy to Clipboard: any element with ".copy-button" class acts as a copy trigger and targets the data-clipboard-target property set on this "trigger"
@@ -281,4 +330,4 @@ clipboard.on('error', function(e) {
 // ff186f827916d3c42a8a2f504e5903d4
 
 // Secret:
-// 6435730407f220a2
+

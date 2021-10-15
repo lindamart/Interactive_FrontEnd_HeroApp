@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js" integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
@@ -20,6 +21,7 @@
     <div class="theme-switcher">
         <img class="theme-button" id="batman" src="https://img.icons8.com/color/48/000000/batman-old.png"/>
         <img class="theme-button" id="superman" src="https://img.icons8.com/color/48/000000/superman.png"/>
+                      <img class="theme-button" id="green-lantern" src="Green-Lantern-Logo.png"/>
     </div>
 
     <!-- Landing Page Hero Section -->
@@ -38,17 +40,22 @@
     <header id="head-container">
         <div class="title-container">
             <h1 id="hero-title">Hero Helper</h1>
+
         </div>
         <div class="animate__animated animate__slow" id="quote-container"></div>
         <div class="quoteBtn-container">
-            <button id="quoteBtn" class="button is-primary"> New Quote </button>
+
+            <button id="quoteBtn" class="button is-warning"> New Quote </button>
+
         </div>
     </header>
     <section id="template-container" class="batman-yellow">
         <section class="batman-dark box" id="search-container">
             <div class="search-field">
                 <input class="search-text" type="text" placeholder="Search..." id="fetch-input"></input>
-                <button class="button is-primary" type="submit" id="imageSearchBtn">Submit</button>
+
+                <button class="button is-warning" type="submit" id="imageSearchBtn">Submit</button>
+
             </div>
             <div class="image-row" id="scroller"></div>
         </section>
@@ -58,13 +65,16 @@
             <input id="inputContact" type="text" value="Contact Me Here">
         </section>
     </section>
+
     <section id="action-button-container">
         <button class="button is-primary" id="viewCodeBtn"> View Code </button>
         <button class="button is-primary" id="clearBtn"> Clear </button>
     </section>
 
+
     <footer class="batman-yellow">TODO: complete footer with either a modal or dropdown (dropup?) giving credit to the resources used (icons, APIs, etc.)</footer>
     </main>
+
 
     <!-- Modal -->
     <div class="modal">
