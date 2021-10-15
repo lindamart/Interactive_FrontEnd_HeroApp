@@ -4,7 +4,6 @@
 	scroll-behavior: smooth;
 }
 
-
 /* html {
 	background-color: #505c7c;
 	background-image: radial-gradient(circle, #505c7c, #282e3c, #242424);
@@ -49,7 +48,6 @@ body {
 	background-image: radial-gradient(circle, #505c7c, #282e3c, #242424);
 }
 
-
 .hero-image {
 	height: 100%;
 
@@ -66,7 +64,6 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-
 }
 
 #head-container {
@@ -76,12 +73,10 @@ body {
 
 	/* margin-bottom: 10px; */
 	/* height: 18em; */
-
 }
 
 .theme-switcher {
 	display: flex;
-
 }
 
 .theme-button {
@@ -107,7 +102,6 @@ body {
 	color: white;
 	margin-top: 50px;
 	/* scroll-margin-bottom: 500px; */
-
 }
 
 #quote-container {
@@ -119,7 +113,6 @@ body {
 	margin-top: 15px;
 	margin-bottom: 20px;
 	width: 50%;
-
 }
 
 .quoteBtn-container {
@@ -128,11 +121,9 @@ body {
 }
 
 #quoteBtn {
-
 	font-size: 15px;
 	background-color: gold;
-  	margin-bottom: 30px;
-
+	margin-bottom: 30px;
 }
 
 #template-container {
@@ -166,7 +157,6 @@ body {
 	/* overflow-y: scroll; */
 	margin: 5px;
 	margin-right: 1em;
-
 }
 
 .search-field {
@@ -177,8 +167,7 @@ body {
 	color: rgb(16, 32, 0);
 	font-size: 20px;
 
-	border-radius: .25em 0em 0em .25em; 
-
+	border-radius: .25em 0em 0em .25em;
 }
 
 #imageSearchBtn {
@@ -186,7 +175,7 @@ body {
 	justify-content: center;
 	align-content: center;
 
-  	background-color: gold;
+	background-color: gold;
 	/* padding-top: .5em;
 	margin-left: 6em;
 	margin-top: .7em; */
@@ -241,17 +230,18 @@ body {
 	height: 100%;
 	/* vertical-align: bottom; */
 }
-#batman {
-	height: 44.24px;
+/* #batman {
+	width: 44.24px;
 }
 
 #superman {
-	height: 44.24px;
-}
+	width: 44.24px;
 
-#green-lantern {
+} */
+
+/* #green-lantern {
 	height: 44.24px;
-}
+} */
 
 .imgDiv:hover,
 .theme-button:hover {
@@ -273,7 +263,6 @@ body {
 	flex-direction: column;
 	width: 50%;
 	margin: 5px;
-
 }
 
 #action-button-container {
@@ -282,12 +271,10 @@ body {
 
 	margin-top: 50px;
 	padding-bottom: 100px;
-
 }
 
 #clearBtn,
 #viewCodeBtn {
-
 	font-size: 20px;
 
 	padding: 10px;
@@ -301,11 +288,8 @@ body {
 }
 
 #clearBtn {
-
 	margin-left: 10px;
-  	background-color: orangered ;
-
-
+	background-color: orangered;
 }
 
 .coding-containers {
@@ -315,7 +299,6 @@ body {
 	justify-content: center;
 	align-content: center;
 	padding: 0 1em;
-
 }
 
 #HTML-Code {
@@ -326,7 +309,6 @@ body {
 	padding: 10px;
 
 	width: 50%;
-
 }
 
 #CSS-Code {
@@ -335,7 +317,6 @@ body {
 	padding: 10px;
 
 	width: 50%;
-
 }
 
 #inputTitle {
@@ -349,7 +330,6 @@ body {
 	background-color: transparent;
 	border: none;
 	border-radius: .25em;
-
 }
 #inputSubtitle {
 	margin-top: 0;
@@ -384,7 +364,6 @@ textarea {
 	display: none;
 	font-size: 2rem;
 	height: auto;
-
 }
 
 #HTML-Code {
@@ -427,7 +406,6 @@ footer {
 		flex: 50%;
 		max-width: 50%;
 	}
-
 }
 
 @media screen and (max-width: 768px) {
@@ -442,7 +420,6 @@ footer {
 
 	#coding-containers {
 		flex-direction: column;
-
 	}
 	#HTML-Code,
 	#CSS-Code {
@@ -470,7 +447,6 @@ footer {
 	background-image: radial-gradient(circle, #fdff00, #c7c016, #988829);
 }
 
-
 .batman-image {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url('https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjU1NTR8MHwxfHNlYXJjaHwyfHxiYXRtYW58ZW58MHwwfHx8MTYzNDI1OTQwMQ&ixlib=rb-1.2.1&q=80&w=1080');
@@ -487,19 +463,16 @@ footer {
 	background-image: radial-gradient(circle, #e20025, #b50622, #8c0b1f);
 }
 
-
 .superman-yellow {
 	background-color: #ffed10;
 	background-image: radial-gradient(circle, #ffd700, #fdeb00, #fcff00);
 }
 
-
-
-  .superman-image {
+.superman-image {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url('https://images.unsplash.com/photo-1513384312027-9fa69a360337?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjU1NTR8MHwxfHNlYXJjaHwzfHxzdXBlcm1hbnxlbnwwfDB8fHwxNjM0MjY4MDY1&ixlib=rb-1.2.1&q=80&w=1080');
 }
-  
+
 /* GREEN LANTERN THEME */
 .green-lantern-dark {
 	background-color: #016738;
@@ -511,9 +484,12 @@ footer {
 	background-image: radial-gradient(circle, #9affa9, #74ff89, #4dff67);
 }
 
+.green-lantern-image {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('green-lantern.jpeg');
+}
+
 @media screen and (max-width: 576px) {
 	.image-row .imgDiv {
-
 		width: 33.3%;
 	}
 }
