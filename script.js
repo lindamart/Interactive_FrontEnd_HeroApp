@@ -153,10 +153,15 @@ function addBatmanClasses () {
       
           // Remove green-lantern classes
     $('body').removeClass('green-lantern-green')
-    $('#head-container').removeClass('green-lantern-green')
+    $('main').removeClass('green-lantern-green')
     $('#search-container').removeClass('green-lantern-green')
     $('#preview-container').removeClass('green-lantern-green')
     $('#template-container').removeClass('green-lantern-dark')
+    $('#HTML-Code').removeClass('green-lantern-green')
+    $('#CSS-Code').removeClass('green-lantern-green')
+    $('.hero-image').removeClass('green-lantern-image')
+    $('footer').removeClass('green-lantern-dark')
+
 
 
 
@@ -190,10 +195,14 @@ function addSupermanClasses () {
 
     // Remove green-lantern classes
     $('body').removeClass('green-lantern-green')
-    $('#head-container').removeClass('green-lantern-green')
+    $('main').removeClass('green-lantern-green')
     $('#search-container').removeClass('green-lantern-green')
     $('#preview-container').removeClass('green-lantern-green')
     $('#template-container').removeClass('green-lantern-dark')
+    $('#HTML-Code').removeClass('green-lantern-green')
+    $('#CSS-Code').removeClass('green-lantern-green')
+    $('.hero-image').removeClass('green-lantern-image')
+    $('footer').removeClass('green-lantern-dark')
 
 
     // Add superman classes
@@ -237,10 +246,15 @@ function addGreenLanternClasses () {
 
     // Add green-lantern classes
     $('body').addClass('green-lantern-green')
-    $('#head-container').addClass('green-lantern-green')
+    $('main').addClass('green-lantern-green')
     $('#search-container').addClass('green-lantern-green')
     $('#preview-container').addClass('green-lantern-green')
     $('#template-container').addClass('green-lantern-dark')
+    $('#HTML-Code').addClass('green-lantern-green')
+    $('#CSS-Code').addClass('green-lantern-green')
+    $('.hero-image').addClass('green-lantern-image')
+    $('footer').addClass('green-lantern-dark')
+    $('.hero-text a').css('color', '#4dff67')
 }
 $('#green-lantern').on('click', addGreenLanternClasses)
 
