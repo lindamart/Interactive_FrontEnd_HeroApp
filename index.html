@@ -11,18 +11,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href ="style.css">
     <link rel="hero icon" href="hero_icon.jpg" />
-    <title>Hero Generator</title>
+    <title>Hero Helper</title>
 </head>
 <body class="batman-dark">
     <header id="head-container" class="batman-dark">
         <div class="title-container">
-            <h1>Hero Generator</h1>
+            <h1>Hero Helper</h1>
             <div class="theme-switcher">
                 <img class="theme-button" id="batman" src="https://img.icons8.com/ios/50/000000/batman-old.png"/>
                 <img class="theme-button" id="superman" src="https://img.icons8.com/color/48/000000/superman.png"/>
             </div>
         </div>
-        <div id="quote-container"></div>
+        <div class="animate__animated animate__slow" id="quote-container"></div>
         <div class="quoteBtn-container">
             <button id="quoteBtn" class="button is-primary"> New Quote </button>
         </div>
@@ -41,7 +41,7 @@
             <input id="inputContact" type="text" value="Contact Me Here">
         </section>
     </section>
-    <section id="clear">
+    <section id="action-button-container">
         <button class="button is-primary" id="viewCodeBtn"> View Code </button>
         <button class="button is-primary" id="clearBtn"> Clear </button>
     </section>
@@ -52,13 +52,21 @@
         <div class="modal-content animate__animated">
             <section class="coding-containers">
                 <!-- <section id="coding-container-1"> -->
-                    <section id="HTML-Code"></section>
+                    <section class="batman-yellow" id="HTML-Code"></section>
                 <!-- </section> -->
-                <section id="CSS-Code">
+                <section class="batman-yellow" id="CSS-Code">
                     <textarea id="css" class="copy-button" readonly data-clipboard-target="#css">
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
         .hero-image {
             background-image: none;
-            height: 100vh;
+            height: 100%;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -82,27 +90,7 @@
             text-align: center;
             cursor: pointer;
             border: none;
-        }
-                                            
-                            .hero-text {
-                                text-align: center;
-                                position: absolute;
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                                color: white;
-                            }
-            
-                            button {
-                                color: black;
-                                text-align: center;
-                                cursor: pointer;
-                                border: none;
-                            }
-                                                
+        }    
                         </textarea>
                     </section>
                 </section>
