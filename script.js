@@ -151,6 +151,7 @@ function addBatmanClasses () {
     $('footer').removeClass('superman-red')
 
 
+
     // Add batman classes
     $('body').addClass('batman-dark')
     $('main').addClass('batman-dark')
@@ -161,6 +162,8 @@ function addBatmanClasses () {
     $('#CSS-Code').addClass('batman-yellow')
     $('.hero-image').addClass('batman-image')
     $('footer').addClass('batman-yellow')
+    $('.hero-text a').css('color', '#ffed10')
+
 
 
 }
@@ -177,6 +180,7 @@ function addSupermanClasses () {
     $('.hero-image').removeClass('batman-image')
     $('footer').removeClass('batman-yellow')
 
+
     // Add superman classes
     $('body').addClass('superman-blue')
     $('main').addClass('superman-blue')
@@ -187,6 +191,8 @@ function addSupermanClasses () {
     $('#CSS-Code').addClass('superman-red')
     $('.hero-image').addClass('superman-image')
     $('footer').addClass('superman-red')
+    $('.hero-text a').css('color', '#e20025')
+
 
 
 }

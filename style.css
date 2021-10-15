@@ -10,8 +10,6 @@
 } */
 
 i {
-	color: white;
-	/* background-color: white; */
 	font-size: 40px;
 }
 
@@ -22,7 +20,7 @@ i {
 
 .hero-text a {
 	text-decoration: none;
-	color: white;
+	color: #ffed10;
 }
 
 .theme-switcher {
