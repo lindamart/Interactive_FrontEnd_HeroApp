@@ -3,8 +3,8 @@ var fetchButton = $('#imageSearchBtn')
 var HTML_code = $('#HTML-Code');
 var previewContainer = document.querySelector('#preview-container')
 var quoteContainer = $('#quote-container')
-var quoteApiKey = "dceb592dfa32b6976e23edb9faa390d4984c31e3"
-var quoteOfDayUrl = `https://zenquotes.io/api/today/${quoteApiKey}`
+// var quoteApiKey = "dceb592dfa32b6976e23edb9faa390d4984c31e3"
+// var quoteOfDayUrl = `https://zenquotes.io/api/today/${quoteApiKey}`
 
 
 // Functions
@@ -22,6 +22,12 @@ function getQuote() {
         } else {
             author = chosenQuote.author
         }
+
+        quoteContainer.addClass('animate__fadeIn')
+        setTimeout(() => {
+            quoteContainer.removeClass('animate__fadeIn')
+        },1000)
+
         quoteContainer.empty()
         quoteContainer.append(`"${chosenQuote.text}" -${author}`)
     })
@@ -29,9 +35,7 @@ function getQuote() {
 
 function getImages() {
     var keyword = document.querySelector("#fetch-input").value
-
     var requestUrl = `https://api.unsplash.com/search/photos?page=1&query=${keyword}&orientation=landscape&per_page=24`
-
     fetch(requestUrl, {
         headers: {
         "Authorization": "Client-ID ou_uv3FSxObsa26JuQwTEMxvsIjEHMNslk552sjVNt8",
@@ -54,6 +58,7 @@ function getImages() {
                 imgDiv.addClass('imgDiv')
 
                 var flkrImg = $("<img>")
+                flkrImg.attr('alt', photos[i].alt_description)
                 flkrImg.addClass('flkrImgResult')
                 
                 // Changed the image source to the URL 
@@ -91,9 +96,17 @@ function generateHTML() {
 function generateCSS(url) {
     var template = 
 `<textarea id="css" class="copy-button" readonly data-clipboard-target="#css">
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
 .hero-image {
-    background-image: url('${url}');
-    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${url}');
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -124,38 +137,56 @@ button {
     $('#CSS-Code').append(template)
 }
 
-// Theme switcher
+
+// Theme switcher functions
 function addBatmanClasses () {
     // Remove superman classes
     $('body').removeClass('superman-blue')
-    $('#head-container').removeClass('superman-blue')
+    $('main').removeClass('superman-blue')
     $('#search-container').removeClass('superman-red')
     $('#preview-container').removeClass('superman-red')
     $('#template-container').removeClass('superman-yellow')
-
-    // Remove green-lantern classes
+    $('#HTML-Code').removeClass('superman-red')
+    $('#CSS-Code').removeClass('superman-red')
+    $('.hero-image').removeClass('superman-image')
+    $('footer').removeClass('superman-red')
+      
+          // Remove green-lantern classes
     $('body').removeClass('green-lantern-green')
     $('#head-container').removeClass('green-lantern-green')
     $('#search-container').removeClass('green-lantern-green')
     $('#preview-container').removeClass('green-lantern-green')
     $('#template-container').removeClass('green-lantern-dark')
 
+
+
     // Add batman classes
     $('body').addClass('batman-dark')
-    $('#head-container').addClass('batman-dark')
+    $('main').addClass('batman-dark')
     $('#search-container').addClass('batman-dark')
     $('#preview-container').addClass('batman-dark')
     $('#template-container').addClass('batman-yellow')
+    $('#HTML-Code').addClass('batman-yellow')
+    $('#CSS-Code').addClass('batman-yellow')
+    $('.hero-image').addClass('batman-image')
+    $('footer').addClass('batman-yellow')
+    $('.hero-text a').css('color', '#ffed10')
+
 
 }
 
 function addSupermanClasses () {
     // Remove batman classes
     $('body').removeClass('batman-dark')
-    $('#head-container').removeClass('batman-dark')
+
+    $('main').removeClass('batman-dark')
     $('#search-container').removeClass('batman-dark')
     $('#preview-container').removeClass('batman-dark')
     $('#template-container').removeClass('batman-yellow')
+    $('#HTML-Code').removeClass('batman-yellow')
+    $('#CSS-Code').removeClass('batman-yellow')
+    $('.hero-image').removeClass('batman-image')
+    $('footer').removeClass('batman-yellow')
 
     // Remove green-lantern classes
     $('body').removeClass('green-lantern-green')
@@ -164,28 +195,45 @@ function addSupermanClasses () {
     $('#preview-container').removeClass('green-lantern-green')
     $('#template-container').removeClass('green-lantern-dark')
 
-     // Add superman classes
-     $('body').addClass('superman-blue')
-     $('#head-container').addClass('superman-blue')
-     $('#search-container').addClass('superman-red')
-     $('#preview-container').addClass('superman-red')
-     $('#template-container').addClass('superman-yellow')
+
+    // Add superman classes
+    $('body').addClass('superman-blue')
+    $('main').addClass('superman-blue')
+    $('#search-container').addClass('superman-red')
+    $('#preview-container').addClass('superman-red')
+    $('#template-container').addClass('superman-yellow')
+    $('#HTML-Code').addClass('superman-red')
+    $('#CSS-Code').addClass('superman-red')
+    $('.hero-image').addClass('superman-image')
+    $('footer').addClass('superman-red')
+    $('.hero-text a').css('color', '#e20025')
+
+
+
 }
 
-function addGreenLanterClasses () {
+function addGreenLanternClasses () {
     // Remove batman classes
     $('body').removeClass('batman-dark')
-    $('#head-container').removeClass('batman-dark')
+    $('main').removeClass('batman-dark')
     $('#search-container').removeClass('batman-dark')
     $('#preview-container').removeClass('batman-dark')
     $('#template-container').removeClass('batman-yellow')
+    $('#HTML-Code').removeClass('batman-yellow')
+    $('#CSS-Code').removeClass('batman-yellow')
+    $('.hero-image').removeClass('batman-image')
+    $('footer').removeClass('batman-yellow')
 
     // Removes superman classes
     $('body').removeClass('superman-blue')
-    $('#head-container').removeClass('superman-blue')
+    $('main').removeClass('superman-blue')
     $('#search-container').removeClass('superman-red')
     $('#preview-container').removeClass('superman-red')
     $('#template-container').removeClass('superman-yellow')
+    $('#HTML-Code').removeClass('superman-red')
+    $('#CSS-Code').removeClass('superman-red')
+    $('.hero-image').removeClass('superman-image')
+    $('footer').removeClass('superman-red')
 
     // Add green-lantern classes
     $('body').addClass('green-lantern-green')
@@ -194,16 +242,8 @@ function addGreenLanterClasses () {
     $('#preview-container').addClass('green-lantern-green')
     $('#template-container').addClass('green-lantern-dark')
 }
+$('#green-lantern').on('click', addGreenLanternClasses)
 
-
-$('#batman').on('click', addBatmanClasses)
-$('#superman').on('click', addSupermanClasses)
-$('#green-lantern').on('click', addGreenLanterClasses)
-
-// change page title green on-click
-// document.getElementById("green-lanter").onclick = switchGreen () {
-//     document.getElementById("page-title").style.color = "greenyellow";
-// }
 
 
 // Initialize App
@@ -211,34 +251,53 @@ HTML_code.append(generateHTML())
 getQuote()
 
 // Event Listeners
-$('#preview-container').on('keyup', function(){
+
+// Add theme classes
+$('#batman').on('click', addBatmanClasses)
+$('#superman').on('click', addSupermanClasses)
+
+// View HTML codeblock
+$('#viewCodeBtn').on('click', function(){
     HTML_code.empty()
     HTML_code.append(generateHTML())
 })
 
-$('#quoteBtn').on('click', getQuote)
-
+// Add chosen image to preview and to CSS codeblock
 $('.image-row').on('click', '.flkrImgResult', function() {
     var imgURL = this.src
-    $('#preview-container').css("background-image", `url(${imgURL})`);
+    $('#preview-container').css("background-image", `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgURL})`);
     generateCSS(imgURL)
 })
 
+// Get a new quote on button click
+$('#quoteBtn').on('click', getQuote)
+
+// Fetch images
 fetchButton.on('click', function() {
     $('.image-row').empty()
     getImages()
 });
 
+
+// Modal + slide in/out effects
 $('#viewCodeBtn').on('click', () => {
+    $('.modal-content').removeClass('animate__fadeOutLeft')
+    $('.modal-content').addClass('animate__fadeInLeft')
     $('.modal').addClass('is-active');
 })
-
 $('.modal-close').on('click', () => {
-    $('.modal').removeClass('is-active');
+    $('.modal-content').removeClass('animate__fadeInLeft')
+    $('.modal-content').addClass('animate__fadeOutLeft')
+    setTimeout(() => {
+        $('.modal').removeClass('is-active');
+    },1000)
 })
-
 $('.modal-background').on('click', () => {
-    $('.modal').removeClass('is-active');
+    $('.modal-content').removeClass('animate__fadeInLeft')
+    $('.modal-content').addClass('animate__fadeOutLeft')
+    setTimeout(() => {
+        $('.modal').removeClass('is-active');
+    },1000)
 })
 
 
@@ -246,7 +305,7 @@ $('.modal-background').on('click', () => {
 // Copy to Clipboard: any element with ".copy-button" class acts as a copy trigger and targets the data-clipboard-target property set on this "trigger"
 var clipboard = new ClipboardJS('.copy-button');
 
-// do someothing when the copy to clipboard triggers
+// Show message when clipboard succeeds
 clipboard.on('success', function(e) {
     $('#copy-notification').text('Codeblock copied to clipboard!').css('display', 'block')
     setTimeout(() => {
@@ -256,7 +315,7 @@ clipboard.on('success', function(e) {
     e.clearSelection();
 });
 
-// do something when copy to clipboard fails
+// Show message when clipboard fails
 clipboard.on('error', function(e) {
     $('#copy-notification').text('Press CTRL/CMD + C to Copy!').css('display', 'block')
     setTimeout(() => {
@@ -266,34 +325,9 @@ clipboard.on('error', function(e) {
 
 
 
-
-
 // Hero
 // Key:
 // ff186f827916d3c42a8a2f504e5903d4
 
 // Secret:
-// 6435730407f220a2
-
-// const getSuperheroQuote = () => {
-//     fetch('https://superhero-quotes.herokuapp.com/grab?banner=dcu', {headers: {
-//         "mode": "no-cors"
-//     }})
-//     .then(res => {
-//         return res.json()
-//     })
-//     .then(data => {
-//         console.log(data)
-//     })
-// }
-
-// getSuperheroQuote()
-
-
-
-
-
-
-
-
 
