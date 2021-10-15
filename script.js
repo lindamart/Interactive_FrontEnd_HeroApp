@@ -345,3 +345,11 @@ clipboard.on('error', function(e) {
 
 // Secret:
 
+$('.hero-text a').on('click', () => {
+    $('.message').addClass('animate__fadeInRight').css('display', 'block')
+})
+
+$('.delete').on('click', () => {
+    $('.message').remove()
+})
+
