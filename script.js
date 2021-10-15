@@ -50,14 +50,19 @@ function getImages() {
                 var imgURL = photos[i].urls.regular
                 
                 // Created image element
+                var imgDiv = $('<div>')
+                imgDiv.addClass('imgDiv')
+
                 var flkrImg = $("<img>")
                 flkrImg.addClass('flkrImgResult')
                 
                 // Changed the image source to the URL 
                 flkrImg.attr("src", imgURL)
+
+                imgDiv.append(flkrImg)
                 
                 // Attach image to image container
-                $('.image-row').append(flkrImg)
+                $('.image-row').append(imgDiv)
             }
         });
 }
@@ -119,6 +124,88 @@ button {
     $('#CSS-Code').append(template)
 }
 
+// Theme switcher
+function addBatmanClasses () {
+    // Remove superman classes
+    $('body').removeClass('superman-blue')
+    $('#head-container').removeClass('superman-blue')
+    $('#search-container').removeClass('superman-red')
+    $('#preview-container').removeClass('superman-red')
+    $('#template-container').removeClass('superman-yellow')
+
+    // Remove green-lantern classes
+    $('body').removeClass('green-lantern-green')
+    $('#head-container').removeClass('green-lantern-green')
+    $('#search-container').removeClass('green-lantern-green')
+    $('#preview-container').removeClass('green-lantern-green')
+    $('#template-container').removeClass('green-lantern-dark')
+
+    // Add batman classes
+    $('body').addClass('batman-dark')
+    $('#head-container').addClass('batman-dark')
+    $('#search-container').addClass('batman-dark')
+    $('#preview-container').addClass('batman-dark')
+    $('#template-container').addClass('batman-yellow')
+
+}
+
+function addSupermanClasses () {
+    // Remove batman classes
+    $('body').removeClass('batman-dark')
+    $('#head-container').removeClass('batman-dark')
+    $('#search-container').removeClass('batman-dark')
+    $('#preview-container').removeClass('batman-dark')
+    $('#template-container').removeClass('batman-yellow')
+
+    // Remove green-lantern classes
+    $('body').removeClass('green-lantern-green')
+    $('#head-container').removeClass('green-lantern-green')
+    $('#search-container').removeClass('green-lantern-green')
+    $('#preview-container').removeClass('green-lantern-green')
+    $('#template-container').removeClass('green-lantern-dark')
+
+     // Add superman classes
+     $('body').addClass('superman-blue')
+     $('#head-container').addClass('superman-blue')
+     $('#search-container').addClass('superman-red')
+     $('#preview-container').addClass('superman-red')
+     $('#template-container').addClass('superman-yellow')
+}
+
+function addGreenLanterClasses () {
+    // Remove batman classes
+    $('body').removeClass('batman-dark')
+    $('#head-container').removeClass('batman-dark')
+    $('#search-container').removeClass('batman-dark')
+    $('#preview-container').removeClass('batman-dark')
+    $('#template-container').removeClass('batman-yellow')
+
+    // Removes superman classes
+    $('body').removeClass('superman-blue')
+    $('#head-container').removeClass('superman-blue')
+    $('#search-container').removeClass('superman-red')
+    $('#preview-container').removeClass('superman-red')
+    $('#template-container').removeClass('superman-yellow')
+
+    // Add green-lantern classes
+    $('body').addClass('green-lantern-green')
+    $('#head-container').addClass('green-lantern-green')
+    $('#search-container').addClass('green-lantern-green')
+    $('#preview-container').addClass('green-lantern-green')
+    $('#template-container').addClass('green-lantern-dark')
+}
+
+
+$('#batman').on('click', addBatmanClasses)
+$('#superman').on('click', addSupermanClasses)
+$('#green-lantern').on('click', addGreenLanterClasses)
+
+// change page title green on-click
+// document.getElementById("green-lanter").onclick = switchGreen () {
+//     document.getElementById("page-title").style.color = "greenyellow";
+// }
+
+
 // Initialize App
 HTML_code.append(generateHTML())
 getQuote()
@@ -142,23 +229,39 @@ fetchButton.on('click', function() {
     getImages()
 });
 
+$('#viewCodeBtn').on('click', () => {
+    $('.modal').addClass('is-active');
+})
+
+$('.modal-close').on('click', () => {
+    $('.modal').removeClass('is-active');
+})
+
+$('.modal-background').on('click', () => {
+    $('.modal').removeClass('is-active');
+})
+
+
 
 // Copy to Clipboard: any element with ".copy-button" class acts as a copy trigger and targets the data-clipboard-target property set on this "trigger"
 var clipboard = new ClipboardJS('.copy-button');
 
 // do someothing when the copy to clipboard triggers
 clipboard.on('success', function(e) {
-    console.log('Action:', e.action);
-    console.log('Text:', e.text);
-    console.log('Trigger:', e.trigger);
+    $('#copy-notification').text('Codeblock copied to clipboard!').css('display', 'block')
+    setTimeout(() => {
+        $('#copy-notification').text('').css('display', 'none')
+    }, 2000)
 
     e.clearSelection();
 });
 
 // do something when copy to clipboard fails
 clipboard.on('error', function(e) {
-    console.log('Action:', e.action);
-    console.log('Trigger:', e.trigger);
+    $('#copy-notification').text('Press CTRL/CMD + C to Copy!').css('display', 'block')
+    setTimeout(() => {
+        $('#copy-notification').text('').css('display', 'none')
+    }, 2000)
 });
 
 
@@ -171,4 +274,26 @@ clipboard.on('error', function(e) {
 
 // Secret:
 // 6435730407f220a2
+
+// const getSuperheroQuote = () => {
+//     fetch('https://superhero-quotes.herokuapp.com/grab?banner=dcu', {headers: {
+//         "mode": "no-cors"
+//     }})
+//     .then(res => {
+//         return res.json()
+//     })
+//     .then(data => {
+//         console.log(data)
+//     })
+// }
+
+// getSuperheroQuote()
+
+
+
+
+
+
+
+
 

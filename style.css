@@ -3,38 +3,55 @@
 	box-sizing: border-box;
 }
 
-body {
-	background-color: lightblue;
+html {
+	background-color: #505c7c;
+	background-image: radial-gradient(circle, #505c7c, #282e3c, #242424);
+}
 
+body {
+	height: 200vh;
 }
 
 #head-container {
 	display: flex;
 	flex-direction: column;
-	height: 18em;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
-.tile-container {
-	margin-top: 1em;
-	margin-bottom: 1em;
+.theme-switcher {
+	display: flex;
+	justify-content: center;
+}
+
+.theme-button {
+	margin: 5px;
+	transition: .3s ease-in-out;
+}
+
+.title-container {
+	font-size: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 h1 {
 	justify-content: start;
 	text-align: center;
 	margin: 0;
-}
-
-.tile-container {
-	font-size: 30px;
+	margin-bottom: .5em;
+	color: #dac700;
 }
 
 #quote-container {
 	display: flex;
-	height: 60px;
 	justify-content: center;
-	color: darkorchid;
-	font-size: 30px;
+	color: #dac700;
+	font-size: 20px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	width: 70%;
 }
 
 .quoteBtn-container {
@@ -43,18 +60,18 @@ h1 {
 }
 
 #quoteBtn {
-	height: 40px;
-	width: 100px;
-	background-color: lightcoral;
 	font-size: 15px;
+	background-color: gold;
 }
 
 #template-container {
 	display: flex;
 	justify-content: center;
-	position: relative;
+	padding: 1em;
+	margin-top: 2em;
+	margin-bottom: 1em;
+	width: 100%;
 	height: 23em;
-	padding: 0 1em;
 }
 
 #search-container {
@@ -62,37 +79,31 @@ h1 {
 	align-items: center;
 	flex-direction: column;
 	background-color: darkorchid;
-	border: darkorchid 5px solid;
-	padding: 10px;
-	padding: 10px;
-	margin: .5em 1em .5em -.5em;
 	width: 50%;
+	margin: 5px;
+	margin-right: .5em;
+}
+
+.search-field {
+	display: flex;
 }
 
 .search-text {
 	color: rgb(16, 32, 0);
 	font-size: 20px;
-	width: 100%;
-	height: 50%;
+	border-radius: .25em 0em 0em .25em; 
 }
 
 #imageSearchBtn {
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	padding-top: .5em;
-	margin-left: 6em;
-	margin-top: .7em;
 	cursor: pointer;
-	background-color: lightcoral;
 	font-size: 15px;
-	width: 30%;
-	height: 50%;
+	background-color: gold;
 }
 
 #scroller {
-	width: 100%;
-	height: 100%;
 	overflow-y: scroll;
 	scrollbar-color: rebeccapurple green;
 	scrollbar-width: thin;
@@ -108,90 +119,93 @@ h1 {
 	margin-top: 1em;
 }
 
-/* Create four equal columns that sits next to each other */
-.image-column {
-	-ms-flex: 25%; 
-	flex: 25%;
-	max-width: 28%;
-	padding: 0 4px;
+.image-row .imgDiv {
+	vertical-align: middle;
+	width: 25%;
+	transition: .3s ease-in-out;
+	margin: 0;
+	padding: 5px;
 }
 
-.image-row img {
-	margin-top: 8px;
-	margin-left: 8px;
-	vertical-align: middle;
-	width: 20%;
-}	
+.flkrImgResult {
+	padding: 0px;
+	height: 100%;
+}
 
-img:hover {
+.imgDiv:hover,
+.theme-button:hover {
 	transform: scale(1.3);
-	opacity: .9;
+	/* opacity: 1; */
+	cursor: pointer;
+}
+#batman {
+	height: 44.24px;
+}
+
+#superman {
+	height: 44.24px;
+}
+
+#green-lantern {
+	height: 44.24px;
 }
 
 #preview-container {
-	/* background-image: url(Tropical-birds-toucan-colorful_1024x768.jpg); */
-	background-size: 100%;
 	background-repeat: no-repeat;
-	background-position: center center;	
+	background-position: center center;
 	padding: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	margin: .5em -.5em .5em 1em;
 	width: 50%;
+	margin: 5px;
+	margin-left: .5em;
 }
 
 #clear {
 	display: flex;
 	justify-content: center;
+}
+
+#clearBtn,
+#viewCodeBtn {
+	font-size: 20px;
 	padding: 10px;
+	margin-right: 5px;
+	margin-top: .8em;
+	margin-bottom: 1em;
+}
+
+#viewCodeBtn {
+	background-color: gold;
 }
 
 #clearBtn {
-	height: 40px;
-	width: 100px;
-	background-color: lightcoral;
-	font-size: 20px;
-	margin: 1em auto;
+	background-color: orangered ;
 }
 
 .coding-containers {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-content: center;
-	margin-bottom: 4em;
-}
-
-#coding-container-1 {
-	/* display: flex;
-	flex-direction: row; */
-	width: 100%;
-}
-
-#coding-container-2 {
-	/* display: flex;
-	flex-direction: row; */
-	height: 100%;
-	width: 100%;
+	padding: 0 1em;
 }
 
 #HTML-Code {
 	background-color: gold;
 	border: gold 5px solid;
 	padding: 10px;
-	margin-bottom: 2em;
-	width: 95%;
-	margin-left: 1em;
+	width: 50%;
 }
 
 #CSS-Code {
 	background-color: green;
 	border: green 5px solid;
 	padding: 10px;
-	margin-left: 1em;
-	width: 95%;
+	width: 50%;
 }
 
 #inputTitle {
@@ -204,6 +218,8 @@ img:hover {
 	text-align: center;
 	background-color: transparent;
 	border: none;
+	border-radius: .25em;
+
 }
 #inputSubtitle {
 	margin-top: 0;
@@ -212,242 +228,142 @@ img:hover {
 	text-align: center;
 	background-color: transparent;
 	border: none;
+	border-radius: .25em;
 }
 #inputContact {
 	color: black;
 	text-align: center;
 	cursor: pointer;
 	border: none;
+	border-radius: .25em;
 }
 
 textarea {
 	width: 100%;
-	height: 200px;
+	min-height: 200px;
 	resize: none;
 	font-size: .75rem;
+	cursor: pointer;
 }
 
-@media screen and (max-width: 456px) {
-	#head-container {
-		height: 23em;
-	}
-}
-
-@media screen and (max-width: 450px) {
-	#head-container {
-		height: 23em;
-	}
-}
-
-@media screen and (max-width: 450px) {
-	#quote-container {
-		font-size: 20px;
-	}
+#copy-notification {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	font-size: 2rem;
+	height: auto;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 1024px) {
-	.image-row img {
+
+@media screen and (max-width: 400px) {
+	.image-row .imgDiv {
 		-ms-flex: 50%;
 		flex: 50%;
 		max-width: 50%;
 	}
 }
 
+#HTML-Code {
+	background-color: #010101;
+	padding: 10px;
+}
+
+#HTML-Code textarea {
+	background-color: #1e1f1f;
+	border: grey 1px solid;
+	color: lightblue;
+}
+
+#CSS-Code {
+	background-color: #010101;
+	padding: 10px;
+}
+
+#CSS-Code textarea {
+	background-color: #1e1f1f;
+	border: grey 1px solid;
+	color: lightblue;
+}
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 1024px) {
-	.image-row img {
-		-ms-flex: 30%;
-		flex: 30%;
-		max-width: 30%;
-	}
+
+.modal-content {
+	width: 100%;
+	margin: 0;
 }
 
-@media screen and (max-width: 835px) {
+@media screen and (max-width: 768px) {
 	#template-container {
 		flex-direction: column;
-		width: 100%;
-		height: 1000px;
+		height: 40em;
 	}
-}
-
-@media screen and (max-width: 835px) {
+	#preview-container,
 	#search-container {
-		margin: .5em .5em .5em 0em;
-		height: 50%;
 		width: 100%;
 	}
-}
 
-@media screen and (max-width: 835px) {
-	#preview-container {
-		margin: .5em .5em .5em 0em;
-		height: 50%;
-		width: 100%;
-	}
-}
-
-@media screen and (max-width: 835px) {
-	.coding-containers {
+	#coding-containers {
 		flex-direction: column;
 	}
-}
-
-@media screen and (max-width: 754px) {
-	#template-container {
-		flex-direction: column;
-		width: 100%;
-		height: 1000px;
-	}
-}
-
-@media screen and (max-width: 754px) {
-	#search-container {
-		margin: .5em .5em .5em 0em;
-		height: 50%;
+	#HTML-Code,
+	#CSS-Code {
 		width: 100%;
 	}
-}
-
-
-@media screen and (max-width: 754px) {
 	#preview-container {
-		margin: .5em .5em .5em 0em;
-		height: 50%;
-		width: 100%;
+		height: 100%;
 	}
-}
-
-@media screen and (max-width: 677px) {
-	#template-container {
-		flex-direction: column;
-		width: 100%;
-		height: 700px;
-	}
-}
-
-@media screen and (max-width: 677px) {
 	#search-container {
-		margin: .5em .5em .5em 0em;
-		height: 50%;
-		width: 100%;
+		margin-right: 5px;
+		margin-bottom: 1em;
+		max-height: 18em;
 	}
 }
 
+/* BATMAN THEME */
 
-@media screen and (max-width: 677px) {
-	#preview-container {
-		margin: .5em .5em .5em 0em;
-		height: 60%;
-		width: 100%;
-	}
+.batman-dark {
+	background-color: #2c303b;
+	background-image: radial-gradient(circle, #2c303b, #1b1d23, #15161a);
 }
 
-@media screen and (max-width: 501px) {
-	#template-container {
-		flex-direction: column;
-		width: 100%;
-		height: 600px;
-	}
+.batman-yellow {
+	background-color: #ffed10;
+	background-image: radial-gradient(circle, #fdff00, #c7c016, #988829);
 }
 
-@media screen and (max-width: 501px) {
-	#search-container {
-		margin: .5em 1em .5em 0em;
-		height: 50%;
-		width: 100%;
-	}
+/* SUPERMAN THEME */
+.superman-blue {
+	background-color: #0060aa;
+	background-image: radial-gradient(circle, #03b6f0, #11119e, #07064d);
 }
 
-@media screen and (max-width: 501px) {
-	#preview-container {
-		margin: .5em .5em .5em 0em;
-		height: 70%;
-		width: 100%;
-	}
+.superman-red {
+	background-color: #e20025;
+	background-image: radial-gradient(circle, #e20025, #b50622, #8c0b1f);
 }
 
-@media screen and (max-width: 425px) {
-	#template-container {
-		flex-direction: column;
-		width: 100%;
-		height: 800px;
-	}
-}
-
-@media screen and (max-width: 425px) {
-	#search-container {
-		margin: .5em 1em .5em 0em;
-		height: 700%;
-		width: 100%;
-	}
-}
-
-@media screen and (max-width: 425px) {
-	#preview-container {
-		margin: .5em .5em .5em 0em; 
-		width: 100%;
-	}
-}
-
-@media screen and (max-width: 350px) {
-	#template-container {
-		flex-direction: column;
-		width: 100%;
-		height: 600px;
-	}
-}
-
-@media screen and (max-width: 350px) {
-	#search-container {
-		margin: .5em 1em .5em 0em;
-		height: 700%;
-		width: 100%;
-	}
-}
-
-@media screen and (max-width: 350px) {
-	#preview-container {
-		margin: .5em .5em .5em 0em; 
-		width: 100%;
-	}
+.superman-yellow {
+	background-color: #ffed10;
+	background-image: radial-gradient(circle, #ffd700, #fdeb00, #fcff00);
 }
 
 
-@media screen and (max-width: 450px) {
-	.image-row img {
-		-ms-flex: 40%;
-		flex: 40%;
-		max-width:50%;
-	}
+/* GREEN LANTERN THEME */
+.green-lantern-dark {
+	background-color: #016738;
+	background-image: radial-gradient(circle, #016738, #016134, #015c31);
 }
 
-@media screen and (max-width: 450px) {
-	#search-container {
-		margin: .5em .5em .5em 0em;
-		height: 40%;
-		width: 100%;
-	}
+.green-lantern-green {
+	background-color: #4dff67;
+	background-image: radial-gradient(circle, #9affa9, #74ff89, #4dff67);
 }
 
-@media screen and (max-width: 450px) {
-	#preview-container {
-		margin: .5em .5em .5em 0em;
-		height: 50%;
-	}
-}
-
-@media screen and (max-width: 320px) {
-	.image-row img {
-		-ms-flex: 100%;
-		flex: 100%;
-		max-width:100%;
-	}
-}
-
-@media screen and (max-width: 320px) {
-	#imageSearchBtn {
-		padding-left: 1em;
-
+@media screen and (max-width: 576px) {
+	.image-row .imgDiv {
+		width: 33.3%;
 	}
 }
