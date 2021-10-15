@@ -58,6 +58,7 @@ function getImages() {
                 imgDiv.addClass('imgDiv')
 
                 var flkrImg = $("<img>")
+                flkrImg.attr('alt', photos[i].alt_description)
                 flkrImg.addClass('flkrImgResult')
                 
                 // Changed the image source to the URL 
@@ -140,39 +141,54 @@ button {
 function addBatmanClasses () {
     // Remove superman classes
     $('body').removeClass('superman-blue')
-    $('#head-container').removeClass('superman-blue')
+    $('main').removeClass('superman-blue')
     $('#search-container').removeClass('superman-red')
     $('#preview-container').removeClass('superman-red')
     $('#template-container').removeClass('superman-yellow')
     $('#HTML-Code').removeClass('superman-red')
     $('#CSS-Code').removeClass('superman-red')
+    $('.hero-image').removeClass('superman-image')
+    $('footer').removeClass('superman-red')
+
+
     // Add batman classes
     $('body').addClass('batman-dark')
-    $('#head-container').addClass('batman-dark')
+    $('main').addClass('batman-dark')
     $('#search-container').addClass('batman-dark')
     $('#preview-container').addClass('batman-dark')
     $('#template-container').addClass('batman-yellow')
     $('#HTML-Code').addClass('batman-yellow')
     $('#CSS-Code').addClass('batman-yellow')
+    $('.hero-image').addClass('batman-image')
+    $('footer').addClass('batman-yellow')
+
+
 }
 
 function addSupermanClasses () {
     // Remove batman classes
     $('body').removeClass('batman-dark')
-    $('#head-container').removeClass('batman-dark')
+    $('main').removeClass('batman-dark')
     $('#search-container').removeClass('batman-dark')
     $('#preview-container').removeClass('batman-dark')
     $('#template-container').removeClass('batman-yellow')
     $('#HTML-Code').removeClass('batman-yellow')
     $('#CSS-Code').removeClass('batman-yellow')
+    $('.hero-image').removeClass('batman-image')
+    $('footer').removeClass('batman-yellow')
+
     // Add superman classes
     $('body').addClass('superman-blue')
-    $('#head-container').addClass('superman-blue')
+    $('main').addClass('superman-blue')
     $('#search-container').addClass('superman-red')
     $('#preview-container').addClass('superman-red')
     $('#template-container').addClass('superman-yellow')
     $('#HTML-Code').addClass('superman-red')
     $('#CSS-Code').addClass('superman-red')
+    $('.hero-image').addClass('superman-image')
+    $('footer').addClass('superman-red')
+
+
 }
 
 

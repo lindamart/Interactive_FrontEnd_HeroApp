@@ -1,11 +1,45 @@
 * {
 	font-family: sans-serif;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 /* html {
 	background-color: #505c7c;
 	background-image: radial-gradient(circle, #505c7c, #282e3c, #242424);
+} */
+
+i {
+	color: white;
+	/* background-color: white; */
+	font-size: 40px;
+}
+
+.hero-text h1 {
+	font-size: 5rem;
+	font-family: 'Alfa Slab One', cursive;
+}
+
+.hero-text a {
+	text-decoration: none;
+	color: white;
+}
+
+.theme-switcher {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+
+.hero-text a:hover {
+	opacity: .5;
+}
+/* .hero-text p {
+	
+}
+.hero-text h1 {
+	
 } */
 
 html,
@@ -15,15 +49,29 @@ body {
 	background-image: radial-gradient(circle, #505c7c, #282e3c, #242424);
 }
 
-/* body {
-	height: 100vh;
-} */
+.hero-image {
+	height: 100%;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.hero-text {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+}
 
 #head-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 	/* height: 18em; */
 }
 
@@ -45,12 +93,15 @@ body {
 	align-items: center;
 }
 
-h1 {
+.title-container h1 {
 	justify-content: start;
 	text-align: center;
 	margin: 0;
 	font-family: 'Alfa Slab One', cursive;
 	font-size: 3rem;
+	color: white;
+	margin-top: 50px;
+	/* scroll-margin-bottom: 500px; */
 }
 
 #quote-container {
@@ -73,6 +124,7 @@ h1 {
 	width: 100px; */
 	/* background-color: lightcoral; */
 	font-size: 15px;
+	margin-bottom: 30px;
 }
 
 #template-container {
@@ -197,8 +249,8 @@ h1 {
 #action-button-container {
 	display: flex;
 	justify-content: center;
-	/* padding: 20px; */
-	margin-bottom: 100px;
+	margin-top: 50px;
+	padding-bottom: 100px;
 }
 
 #clearBtn,
@@ -290,16 +342,6 @@ textarea {
 	height: auto;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-
-@media screen and (max-width: 400px) {
-	.image-row .imgDiv {
-		-ms-flex: 50%;
-		flex: 50%;
-		max-width: 50%;
-	}
-}
-
 #HTML-Code {
 	background-color: #010101;
 	padding: 10px;
@@ -322,11 +364,24 @@ textarea {
 	color: lightblue;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-
 .modal-content {
 	margin: 0;
 	width: 100%;
+}
+
+footer {
+	padding: 50px 0;
+	text-align: center;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+
+@media screen and (max-width: 400px) {
+	.image-row .imgDiv {
+		-ms-flex: 50%;
+		flex: 50%;
+		max-width: 50%;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -369,6 +424,11 @@ textarea {
 	background-image: radial-gradient(circle, #fdff00, #c7c016, #988829);
 }
 
+.batman-image {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjU1NTR8MHwxfHNlYXJjaHwyfHxiYXRtYW58ZW58MHwwfHx8MTYzNDI1OTQwMQ&ixlib=rb-1.2.1&q=80&w=1080');
+}
+
 /* SUPERMAN THEME */
 .superman-blue {
 	background-color: #0060aa;
@@ -384,6 +444,14 @@ textarea {
 	background-color: #ffed10;
 	background-image: radial-gradient(circle, #ffd700, #fdeb00, #fcff00);
 }
+
+.superman-image {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('https://images.unsplash.com/photo-1513384312027-9fa69a360337?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjU1NTR8MHwxfHNlYXJjaHwzfHxzdXBlcm1hbnxlbnwwfDB8fHwxNjM0MjY4MDY1&ixlib=rb-1.2.1&q=80&w=1080');
+}
+
+/* .superman-image {
+} */
 
 @media screen and (max-width: 576px) {
 	.image-row .imgDiv {
