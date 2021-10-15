@@ -269,23 +269,16 @@ function checkTheme() {
     const localStorageTheme = localStorage.getItem("theme");
 
     if (localStorageTheme !== null) {
-        document.addBatmanClasses = localStorageTheme;
-        console.log("localStorage.getItem():", localStorageTheme);
+        if (localStorageTheme === "batman") {
+            addBatmanClasses()
+        }else if (localStorageTheme === "superman"){
+            addSupermanClasses()
+        }else if (localStorageTheme === "green-lantern") {
+            addGreenLanternClasses()
+        }
+    }else {
+        localStorage.setItem("theme", "batman")
     }
-    else if (localStorageTheme === "batman") {
-        document.addBatmanClasses = localStorageTheme;
-        console.log("localStorage.getItem():", localStorageTheme);
-    }
-
-    else if (localStorageTheme === "superman") {
-        document..addSupermanClasses = localStorageTheme;
-        console.log("localStorage.getItem():", localStorageTheme);
-    }
-    else (localStorageTheme === "green-lantern") {
-        document.addGreenLanternClasses = localStorageTheme;
-        console.log("localStorage.getItem():", localStorageTheme);
-    }
-
 }
 
 // Initialize App
