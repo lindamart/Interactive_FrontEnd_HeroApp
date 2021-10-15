@@ -10,27 +10,27 @@ var quoteContainer = $('#quote-container')
 // Functions
 function getQuote() {
     fetch("https://type.fit/api/quotes")
-    .then(res => {
-        return res.json()
-    })
-    .then(data => {
-        let chosenQuote = data[Math.floor(Math.random() * data.length)]
-        console.log(chosenQuote.author)
-        let author = ''
-        if (chosenQuote.author == null){
-            author = 'anonymous'
-        } else {
-            author = chosenQuote.author
-        }
+        .then(res => {
+            return res.json()
+        })
+        .then(data => {
+            let chosenQuote = data[Math.floor(Math.random() * data.length)]
+            console.log(chosenQuote.author)
+            let author = ''
+            if (chosenQuote.author == null) {
+                author = 'anonymous'
+            } else {
+                author = chosenQuote.author
+            }
 
-        quoteContainer.addClass('animate__fadeIn')
-        setTimeout(() => {
-            quoteContainer.removeClass('animate__fadeIn')
-        },1000)
+            quoteContainer.addClass('animate__fadeIn')
+            setTimeout(() => {
+                quoteContainer.removeClass('animate__fadeIn')
+            }, 1000)
 
-        quoteContainer.empty()
-        quoteContainer.append(`"${chosenQuote.text}" -${author}`)
-    })
+            quoteContainer.empty()
+            quoteContainer.append(`"${chosenQuote.text}" -${author}`)
+        })
 }
 
 function getImages() {
@@ -38,10 +38,11 @@ function getImages() {
     var requestUrl = `https://api.unsplash.com/search/photos?page=1&query=${keyword}&orientation=landscape&per_page=24`
     fetch(requestUrl, {
         headers: {
-        "Authorization": "Client-ID ou_uv3FSxObsa26JuQwTEMxvsIjEHMNslk552sjVNt8",
-        "Accept-Version": "v1",
-        "Set-Cookie": "SameSite=None Secure"
-        }})
+            "Authorization": "Client-ID ou_uv3FSxObsa26JuQwTEMxvsIjEHMNslk552sjVNt8",
+            "Accept-Version": "v1",
+            "Set-Cookie": "SameSite=None Secure"
+        }
+    })
         .then(function (response) {
             return response.json();
         })
@@ -52,7 +53,7 @@ function getImages() {
             // Loop over photos
             for (var i = 0; i < photos.length; i++) {
                 var imgURL = photos[i].urls.regular
-                
+
                 // Created image element
                 var imgDiv = $('<div>')
                 imgDiv.addClass('imgDiv')
@@ -60,12 +61,12 @@ function getImages() {
                 var flkrImg = $("<img>")
                 flkrImg.attr('alt', photos[i].alt_description)
                 flkrImg.addClass('flkrImgResult')
-                
+
                 // Changed the image source to the URL 
                 flkrImg.attr("src", imgURL)
 
                 imgDiv.append(flkrImg)
-                
+
                 // Attach image to image container
                 $('.image-row').append(imgDiv)
             }
@@ -94,8 +95,8 @@ function generateHTML() {
 
 // Generate CSS Code output based on content in preview
 function generateCSS(url) {
-    var template = 
-`<textarea id="css" class="copy-button" readonly data-clipboard-target="#css">
+    var template =
+        `<textarea id="css" class="copy-button" readonly data-clipboard-target="#css">
 html, body {
     height: 100%;
     width: 100%;
@@ -139,7 +140,7 @@ button {
 
 
 // Theme switcher functions
-function addBatmanClasses () {
+function addBatmanClasses() {
     // Remove superman classes
     $('body').removeClass('superman-blue')
     $('main').removeClass('superman-blue')
@@ -150,8 +151,8 @@ function addBatmanClasses () {
     $('#CSS-Code').removeClass('superman-red')
     $('.hero-image').removeClass('superman-image')
     $('footer').removeClass('superman-red')
-      
-          // Remove green-lantern classes
+
+    // Remove green-lantern classes
     $('body').removeClass('green-lantern-green')
     $('main').removeClass('green-lantern-green')
     $('#search-container').removeClass('green-lantern-green')
@@ -176,11 +177,12 @@ function addBatmanClasses () {
     $('.hero-image').addClass('batman-image')
     $('footer').addClass('batman-yellow')
     $('.hero-text a').css('color', '#ffed10')
+    localStorage.setItem("theme", "batman");
 
 
 }
 
-function addSupermanClasses () {
+function addSupermanClasses() {
     // Remove batman classes
     $('body').removeClass('batman-dark')
 
@@ -216,12 +218,13 @@ function addSupermanClasses () {
     $('.hero-image').addClass('superman-image')
     $('footer').addClass('superman-red')
     $('.hero-text a').css('color', '#e20025')
+    localStorage.setItem("theme", "superman");
 
 
 
 }
 
-function addGreenLanternClasses () {
+function addGreenLanternClasses() {
     // Remove batman classes
     $('body').removeClass('batman-dark')
     $('main').removeClass('batman-dark')
@@ -255,10 +258,35 @@ function addGreenLanternClasses () {
     $('.hero-image').addClass('green-lantern-image')
     $('footer').addClass('green-lantern-dark')
     $('.hero-text a').css('color', '#4dff67')
+    localStorage.setItem("theme", "green-lantern");
 }
 $('#green-lantern').on('click', addGreenLanternClasses)
 
 
+
+window.onload = checkTheme();
+function checkTheme() {
+    const localStorageTheme = localStorage.getItem("theme");
+
+    if (localStorageTheme !== null) {
+        document.addBatmanClasses = localStorageTheme;
+        console.log("localStorage.getItem():", localStorageTheme);
+    }
+    else if (localStorageTheme === "batman") {
+        document.addBatmanClasses = localStorageTheme;
+        console.log("localStorage.getItem():", localStorageTheme);
+    }
+
+    else if (localStorageTheme === "superman") {
+        document..addSupermanClasses = localStorageTheme;
+        console.log("localStorage.getItem():", localStorageTheme);
+    }
+    else (localStorageTheme === "green-lantern") {
+        document.addGreenLanternClasses = localStorageTheme;
+        console.log("localStorage.getItem():", localStorageTheme);
+    }
+
+}
 
 // Initialize App
 HTML_code.append(generateHTML())
@@ -271,13 +299,13 @@ $('#batman').on('click', addBatmanClasses)
 $('#superman').on('click', addSupermanClasses)
 
 // View HTML codeblock
-$('#viewCodeBtn').on('click', function(){
+$('#viewCodeBtn').on('click', function () {
     HTML_code.empty()
     HTML_code.append(generateHTML())
 })
 
 // Add chosen image to preview and to CSS codeblock
-$('.image-row').on('click', '.flkrImgResult', function() {
+$('.image-row').on('click', '.flkrImgResult', function () {
     var imgURL = this.src
     $('#preview-container').css("background-image", `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgURL})`);
     generateCSS(imgURL)
@@ -287,7 +315,7 @@ $('.image-row').on('click', '.flkrImgResult', function() {
 $('#quoteBtn').on('click', getQuote)
 
 // Fetch images
-fetchButton.on('click', function() {
+fetchButton.on('click', function () {
     $('.image-row').empty()
     getImages()
 });
@@ -304,14 +332,14 @@ $('.modal-close').on('click', () => {
     $('.modal-content').addClass('animate__fadeOutLeft')
     setTimeout(() => {
         $('.modal').removeClass('is-active');
-    },1000)
+    }, 1000)
 })
 $('.modal-background').on('click', () => {
     $('.modal-content').removeClass('animate__fadeInLeft')
     $('.modal-content').addClass('animate__fadeOutLeft')
     setTimeout(() => {
         $('.modal').removeClass('is-active');
-    },1000)
+    }, 1000)
 })
 
 
@@ -320,7 +348,7 @@ $('.modal-background').on('click', () => {
 var clipboard = new ClipboardJS('.copy-button');
 
 // Show message when clipboard succeeds
-clipboard.on('success', function(e) {
+clipboard.on('success', function (e) {
     $('#copy-notification').text('Codeblock copied to clipboard!').css('display', 'block')
     setTimeout(() => {
         $('#copy-notification').text('').css('display', 'none')
@@ -330,7 +358,7 @@ clipboard.on('success', function(e) {
 });
 
 // Show message when clipboard fails
-clipboard.on('error', function(e) {
+clipboard.on('error', function (e) {
     $('#copy-notification').text('Press CTRL/CMD + C to Copy!').css('display', 'block')
     setTimeout(() => {
         $('#copy-notification').text('').css('display', 'none')
