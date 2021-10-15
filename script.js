@@ -3,8 +3,8 @@ var fetchButton = $('#imageSearchBtn')
 var HTML_code = $('#HTML-Code');
 var previewContainer = document.querySelector('#preview-container')
 var quoteContainer = $('#quote-container')
-var quoteApiKey = "dceb592dfa32b6976e23edb9faa390d4984c31e3"
-var quoteOfDayUrl = `https://zenquotes.io/api/today/${quoteApiKey}`
+// var quoteApiKey = "dceb592dfa32b6976e23edb9faa390d4984c31e3"
+// var quoteOfDayUrl = `https://zenquotes.io/api/today/${quoteApiKey}`
 
 
 // Functions
@@ -22,6 +22,12 @@ function getQuote() {
         } else {
             author = chosenQuote.author
         }
+
+        quoteContainer.addClass('animate__fadeIn')
+        setTimeout(() => {
+            quoteContainer.removeClass('animate__fadeIn')
+        },1000)
+
         quoteContainer.empty()
         quoteContainer.append(`"${chosenQuote.text}" -${author}`)
     })
@@ -89,9 +95,17 @@ function generateHTML() {
 function generateCSS(url) {
     var template = 
 `<textarea id="css" class="copy-button" readonly data-clipboard-target="#css">
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
 .hero-image {
-    background-image: url('${url}');
-    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${url}');
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -130,12 +144,16 @@ function addBatmanClasses () {
     $('#search-container').removeClass('superman-red')
     $('#preview-container').removeClass('superman-red')
     $('#template-container').removeClass('superman-yellow')
+    $('#HTML-Code').removeClass('superman-red')
+    $('#CSS-Code').removeClass('superman-red')
     // Add batman classes
     $('body').addClass('batman-dark')
     $('#head-container').addClass('batman-dark')
     $('#search-container').addClass('batman-dark')
     $('#preview-container').addClass('batman-dark')
     $('#template-container').addClass('batman-yellow')
+    $('#HTML-Code').addClass('batman-yellow')
+    $('#CSS-Code').addClass('batman-yellow')
 }
 
 function addSupermanClasses () {
@@ -145,12 +163,16 @@ function addSupermanClasses () {
     $('#search-container').removeClass('batman-dark')
     $('#preview-container').removeClass('batman-dark')
     $('#template-container').removeClass('batman-yellow')
+    $('#HTML-Code').removeClass('batman-yellow')
+    $('#CSS-Code').removeClass('batman-yellow')
     // Add superman classes
     $('body').addClass('superman-blue')
     $('#head-container').addClass('superman-blue')
     $('#search-container').addClass('superman-red')
     $('#preview-container').addClass('superman-red')
     $('#template-container').addClass('superman-yellow')
+    $('#HTML-Code').addClass('superman-red')
+    $('#CSS-Code').addClass('superman-red')
 }
 
 
@@ -174,7 +196,7 @@ $('#viewCodeBtn').on('click', function(){
 // Add chosen image to preview and to CSS codeblock
 $('.image-row').on('click', '.flkrImgResult', function() {
     var imgURL = this.src
-    $('#preview-container').css("background-image", `url(${imgURL})`);
+    $('#preview-container').css("background-image", `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgURL})`);
     generateCSS(imgURL)
 })
 
