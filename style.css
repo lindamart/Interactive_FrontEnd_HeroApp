@@ -4,10 +4,16 @@
 	scroll-behavior: smooth;
 }
 
-/* html {
-	background-color: #505c7c;
-	background-image: radial-gradient(circle, #505c7c, #282e3c, #242424);
-} */
+.message {
+	position: absolute;
+	/* width: 50%; */
+	top: 115%;
+	left: 25%;
+	right: 25%;
+	/* transform: translate(-50%, -50%); */
+	display: none;
+	z-index: 100;
+}
 
 i {
 	font-size: 40px;
@@ -70,6 +76,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	/* position: absolute; */
 
 	/* margin-bottom: 10px; */
 	/* height: 18em; */
