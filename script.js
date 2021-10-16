@@ -1,10 +1,6 @@
-var flkrList = document.querySelector('ul');
 var fetchButton = $('#imageSearchBtn')
 var HTML_code = $('#HTML-Code');
-var previewContainer = document.querySelector('#preview-container')
 var quoteContainer = $('#quote-container')
-// var quoteApiKey = "dceb592dfa32b6976e23edb9faa390d4984c31e3"
-// var quoteOfDayUrl = `https://zenquotes.io/api/today/${quoteApiKey}`
 
 
 // Functions
@@ -14,8 +10,8 @@ function getQuote() {
             return res.json()
         })
         .then(data => {
+            // Choose a random quote from quote array (data comes back as an array of objects which contain text and author)
             let chosenQuote = data[Math.floor(Math.random() * data.length)]
-            console.log(chosenQuote.author)
             let author = ''
             if (chosenQuote.author == null) {
                 author = 'anonymous'
@@ -34,7 +30,8 @@ function getQuote() {
 }
 
 function getImages() {
-    var keyword = document.querySelector("#fetch-input").value
+    // Make API call based on what the user has put into the input field
+    var keyword = $("#fetch-input").val()
     var requestUrl = `https://api.unsplash.com/search/photos?page=1&query=${keyword}&orientation=landscape&per_page=24`
     fetch(requestUrl, {
         headers: {
@@ -47,25 +44,24 @@ function getImages() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
+
             var photos = data.results
 
             // Loop over photos
             for (var i = 0; i < photos.length; i++) {
                 var imgURL = photos[i].urls.regular
 
-                // Created image element
+                // Creat image element
                 var imgDiv = $('<div>')
                 imgDiv.addClass('imgDiv')
+                var img = $("<img>")
+                img.attr('alt', photos[i].alt_description)
+                img.addClass('imgResult')
 
-                var flkrImg = $("<img>")
-                flkrImg.attr('alt', photos[i].alt_description)
-                flkrImg.addClass('flkrImgResult')
+                // Change the image source to the URL 
+                img.attr("src", imgURL)
 
-                // Changed the image source to the URL 
-                flkrImg.attr("src", imgURL)
-
-                imgDiv.append(flkrImg)
+                imgDiv.append(img)
 
                 // Attach image to image container
                 $('.image-row').append(imgDiv)
@@ -163,9 +159,6 @@ function addBatmanClasses() {
     $('.hero-image').removeClass('green-lantern-image')
     $('footer').removeClass('green-lantern-dark')
 
-
-
-
     // Add batman classes
     $('body').addClass('batman-dark')
     $('main').addClass('batman-dark')
@@ -178,14 +171,11 @@ function addBatmanClasses() {
     $('footer').addClass('batman-yellow')
     $('.hero-text a').css('color', '#ffed10')
     localStorage.setItem("theme", "batman");
-
-
 }
 
 function addSupermanClasses() {
     // Remove batman classes
     $('body').removeClass('batman-dark')
-
     $('main').removeClass('batman-dark')
     $('#search-container').removeClass('batman-dark')
     $('#preview-container').removeClass('batman-dark')
@@ -206,7 +196,6 @@ function addSupermanClasses() {
     $('.hero-image').removeClass('green-lantern-image')
     $('footer').removeClass('green-lantern-dark')
 
-
     // Add superman classes
     $('body').addClass('superman-blue')
     $('main').addClass('superman-blue')
@@ -219,9 +208,6 @@ function addSupermanClasses() {
     $('footer').addClass('superman-red')
     $('.hero-text a').css('color', '#e20025')
     localStorage.setItem("theme", "superman");
-
-
-
 }
 
 function addGreenLanternClasses() {
@@ -260,20 +246,19 @@ function addGreenLanternClasses() {
     $('.hero-text a').css('color', '#4dff67')
     localStorage.setItem("theme", "green-lantern");
 }
-$('#green-lantern').on('click', addGreenLanternClasses)
-
 
 
 window.onload = checkTheme();
 function checkTheme() {
-    const localStorageTheme = localStorage.getItem("theme");
+    const theme = localStorage.getItem("theme");
 
-    if (localStorageTheme !== null) {
-        if (localStorageTheme === "batman") {
+    // If local storage is not null, check to see what theme is set to and run corresponding function
+    if (theme !== null) {
+        if (theme === "batman") {
             addBatmanClasses()
-        }else if (localStorageTheme === "superman"){
+        }else if (theme === "superman"){
             addSupermanClasses()
-        }else if (localStorageTheme === "green-lantern") {
+        }else if (theme === "green-lantern") {
             addGreenLanternClasses()
         }
     }else {
@@ -285,20 +270,13 @@ function checkTheme() {
 HTML_code.append(generateHTML())
 getQuote()
 
-// Event Listeners
-
 // Add theme classes
 $('#batman').on('click', addBatmanClasses)
 $('#superman').on('click', addSupermanClasses)
-
-// View HTML codeblock
-$('#viewCodeBtn').on('click', function () {
-    HTML_code.empty()
-    HTML_code.append(generateHTML())
-})
+$('#green-lantern').on('click', addGreenLanternClasses)
 
 // Add chosen image to preview and to CSS codeblock
-$('.image-row').on('click', '.flkrImgResult', function () {
+$('.image-row').on('click', '.imgResult', function () {
     var imgURL = this.src
     $('#preview-container').css("background-image", `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imgURL})`);
     generateCSS(imgURL)
@@ -314,8 +292,10 @@ fetchButton.on('click', function () {
 });
 
 
-// Modal + slide in/out effects
+// Codeblock modal + slide in/out effects
 $('#viewCodeBtn').on('click', () => {
+    HTML_code.empty()
+    HTML_code.append(generateHTML())
     $('.modal-content').removeClass('animate__fadeOutLeft')
     $('.modal-content').addClass('animate__fadeInLeft')
     $('.modal').addClass('is-active');
@@ -323,6 +303,7 @@ $('#viewCodeBtn').on('click', () => {
 $('.modal-close').on('click', () => {
     $('.modal-content').removeClass('animate__fadeInLeft')
     $('.modal-content').addClass('animate__fadeOutLeft')
+    // Delay removing the is-active class until the fade out animation is complete
     setTimeout(() => {
         $('.modal').removeClass('is-active');
     }, 1000)
@@ -330,6 +311,7 @@ $('.modal-close').on('click', () => {
 $('.modal-background').on('click', () => {
     $('.modal-content').removeClass('animate__fadeInLeft')
     $('.modal-content').addClass('animate__fadeOutLeft')
+    // Delay removing the is-active class until the fade out animation is complete
     setTimeout(() => {
         $('.modal').removeClass('is-active');
     }, 1000)
@@ -342,30 +324,24 @@ var clipboard = new ClipboardJS('.copy-button');
 
 // Show message when clipboard succeeds
 clipboard.on('success', function (e) {
-    $('#copy-notification').text('Codeblock copied to clipboard!').css('display', 'block')
+    $('#copy-notification').text('Codeblock copied to clipboard!').css('display', 'block').removeClass('animate__fadeOut').addClass('animate__fadeIn')
     setTimeout(() => {
-        $('#copy-notification').text('').css('display', 'none')
-    }, 2000)
+        $('#copy-notification').removeClass('animate__fadeIn').addClass('animate__fadeOut')
+    }, 1000)
 
     e.clearSelection();
 });
 
 // Show message when clipboard fails
 clipboard.on('error', function (e) {
-    $('#copy-notification').text('Press CTRL/CMD + C to Copy!').css('display', 'block')
+    $('#copy-notification').text('Press CTRL/CMD + C to Copy!').css('display', 'block').removeClass('animate__fadeOut').addClass('animate__fadeIn')
     setTimeout(() => {
-        $('#copy-notification').text('').css('display', 'none')
+        $('#copy-notification').removeClass('animate__fadeIn').addClass('animate__fadeOut')
     }, 2000)
 });
 
 
-
-// Hero
-// Key:
-// ff186f827916d3c42a8a2f504e5903d4
-
-// Secret:
-
+// Welcome instructions fade in on click and remove completely from the page when closed out
 $('.hero-text a').on('click', () => {
     $('.message').addClass('animate__fadeInRight').css('display', 'block')
 })
