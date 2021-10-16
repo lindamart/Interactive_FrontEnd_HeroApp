@@ -5,12 +5,11 @@
 In this group project we created an application where a user can search for an image and use it to create a sample of a Hero image with text.  
 They will also be presented with HTML and CSS code for the Hero image and wording they selected that they can then use in their own code. 
 
-# APIs
+# Link to live site
 
-Unslpash - Images
-Type.fit - Quotes
+https://lindamart.github.io/Interactive_FrontEnd_HeroApp/
 
-# Wireframe or Design for the website
+# Wireframe for the website
 
 ## Desktop
 
@@ -20,6 +19,13 @@ Type.fit - Quotes
 
 ![](hero_wireframe_mobile.jpg)
 
+# Application Preview
+
+![](AppLandingPgBatman.jpg)
+
+![](AppSearchBoxPreviewBox.jpg)
+
+![](AppSelectedHTMLCSSCode.jpg)
 
 
 # Acceptance Criteria
@@ -49,15 +55,16 @@ The user can then click on the code to copy the  HTML & CSS code for the final i
 
 The user can then click back on the main screen and they can then start a new search if they wish to start over again
 
+
 # Credits
 
 W3 Schools: https://www.w3schools.com/
 
 MDN Web Docs: https://developer.mozilla.org/en-US
 
-Unsplash Images Docs: https://unsplash.com/developers
+Unsplash Images API Docs: https://unsplash.com/developers
 
-Type.fit Quotes Docs: https://type.fit/api/quotes
+Type.fit Quotes API Docs: https://type.fit/api/quotes
 
 Icons8 Docs: https://icons8.com/
 
