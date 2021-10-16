@@ -219,11 +219,11 @@ body {
 	display: flex;
 	justify-content: center;
 
-#coding-container {
+/* #coding-container {
 	/* border: black 5px solid; */
 	display: flex;
 	/* justify-content: space-around; */
-}
+} */
 
 #HTML-Code {
 	background-color: #010101;
