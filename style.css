@@ -232,7 +232,7 @@ body {
 	padding: 5px;
 }
 
-.flkrImgResult {
+.imgResult {
 	padding: 0px;
 	height: 100%;
 	/* vertical-align: bottom; */
@@ -263,7 +263,6 @@ body {
 
 	background-position: center;
 	background-size: cover;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -285,7 +284,7 @@ body {
 	font-size: 20px;
 
 	padding: 10px;
-	margin-right: 5px;
+	/* margin-right: 5px; */
 	margin-top: .8em;
 	margin-bottom: 1em;
 }
