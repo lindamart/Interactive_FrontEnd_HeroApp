@@ -296,24 +296,24 @@ fetchButton.on('click', function () {
 $('#viewCodeBtn').on('click', () => {
     HTML_code.empty()
     HTML_code.append(generateHTML())
-    $('.modal-content').removeClass('animate__fadeOutLeft')
-    $('.modal-content').addClass('animate__fadeInLeft')
-    $('.modal').addClass('is-active');
+    $('.codeblock-modal .modal-content').removeClass('animate__fadeOutLeft')
+    $('.codeblock-modal .modal-content').addClass('animate__fadeInLeft')
+    $('.codeblock-modal.modal').addClass('is-active');
 })
-$('.modal-close').on('click', () => {
-    $('.modal-content').removeClass('animate__fadeInLeft')
-    $('.modal-content').addClass('animate__fadeOutLeft')
+$('.codeblock-modal .modal-close').on('click', () => {
+    $('.codebock-modal .modal-content').removeClass('animate__fadeInLeft')
+    $('.codeblock-modal .modal-content').addClass('animate__fadeOutLeft')
     // Delay removing the is-active class until the fade out animation is complete
     setTimeout(() => {
-        $('.modal').removeClass('is-active');
+        $('.codeblock-modal.modal').removeClass('is-active');
     }, 1000)
 })
-$('.modal-background').on('click', () => {
-    $('.modal-content').removeClass('animate__fadeInLeft')
-    $('.modal-content').addClass('animate__fadeOutLeft')
+$('.codeblock-modal .modal-background').on('click', () => {
+    $('.codeblock-modal .modal-content').removeClass('animate__fadeInLeft')
+    $('.codeblock-modal .modal-content').addClass('animate__fadeOutLeft')
     // Delay removing the is-active class until the fade out animation is complete
     setTimeout(() => {
-        $('.modal').removeClass('is-active');
+        $('.codeblock-modal.modal').removeClass('is-active');
     }, 1000)
 })
 
@@ -341,12 +341,46 @@ clipboard.on('error', function (e) {
 });
 
 
-// Welcome instructions fade in on click and remove completely from the page when closed out
-$('.hero-text a').on('click', () => {
-    $('.message').addClass('animate__fadeInRight').css('display', 'block')
+
+// Instructions modal intersection observer and fade in out animations
+const heroTitle = document.querySelector('#hero-title')
+
+const options = {
+    threshold: 1,
+    rootMargin: '0px 0px -200px 0px'
+}
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            console.log('intersecting')
+
+                $('.message-modal').addClass('is-active')
+                $('.message-modal .modal-content').addClass('animate__fadeInLeft')
+
+
+            observer.unobserve(heroTitle)
+        }
+    })
+}, options)
+
+observer.observe(heroTitle)
+
+$('.message-modal .modal-close').on('click', () => {
+    $('.message-modal .modal-content').removeClass('animate__fadeInLeft')
+    $('.message-modal .modal-content').addClass('animate__fadeOutLeft')
+    // Delay removing the is-active class until the fade out animation is complete
+    setTimeout(() => {
+        $('.message-modal').removeClass('is-active');
+    }, 1000)
 })
 
-$('.delete').on('click', () => {
-    $('.message').remove()
+$('.message-modal .modal-background').on('click', () => {
+    $('.message-modal .modal-content').removeClass('animate__fadeInLeft')
+    $('.message-modal .modal-content').addClass('animate__fadeOutLeft')
+    // Delay removing the is-active class until the fade out animation is complete
+    setTimeout(() => {
+        $('.message-modal').removeClass('is-active');
+    }, 1000)
 })
 
