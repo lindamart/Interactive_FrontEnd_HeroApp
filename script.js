@@ -137,28 +137,8 @@ button {
 
 // Theme switcher functions
 function addBatmanClasses() {
-    // Remove superman classes
-    $('body').removeClass('superman-blue')
-    $('main').removeClass('superman-blue')
-    $('#search-container').removeClass('superman-red')
-    $('#preview-container').removeClass('superman-red')
-    $('#template-container').removeClass('superman-yellow')
-    $('#HTML-Code').removeClass('superman-red')
-    $('#CSS-Code').removeClass('superman-red')
-    $('.hero-image').removeClass('superman-image')
-    $('footer').removeClass('superman-red')
-
-    // Remove green-lantern classes
-    $('body').removeClass('green-lantern-green')
-    $('main').removeClass('green-lantern-green')
-    $('#search-container').removeClass('green-lantern-green')
-    $('#preview-container').removeClass('green-lantern-green')
-    $('#template-container').removeClass('green-lantern-dark')
-    $('#HTML-Code').removeClass('green-lantern-green')
-    $('#CSS-Code').removeClass('green-lantern-green')
-    $('.hero-image').removeClass('green-lantern-image')
-    $('footer').removeClass('green-lantern-dark')
-
+    removeSupermanClasses()
+    removeGreenLanternClasses()
     // Add batman classes
     $('body').addClass('batman-dark')
     $('main').addClass('batman-dark')
@@ -174,28 +154,8 @@ function addBatmanClasses() {
 }
 
 function addSupermanClasses() {
-    // Remove batman classes
-    $('body').removeClass('batman-dark')
-    $('main').removeClass('batman-dark')
-    $('#search-container').removeClass('batman-dark')
-    $('#preview-container').removeClass('batman-dark')
-    $('#template-container').removeClass('batman-yellow')
-    $('#HTML-Code').removeClass('batman-yellow')
-    $('#CSS-Code').removeClass('batman-yellow')
-    $('.hero-image').removeClass('batman-image')
-    $('footer').removeClass('batman-yellow')
-
-    // Remove green-lantern classes
-    $('body').removeClass('green-lantern-green')
-    $('main').removeClass('green-lantern-green')
-    $('#search-container').removeClass('green-lantern-green')
-    $('#preview-container').removeClass('green-lantern-green')
-    $('#template-container').removeClass('green-lantern-dark')
-    $('#HTML-Code').removeClass('green-lantern-green')
-    $('#CSS-Code').removeClass('green-lantern-green')
-    $('.hero-image').removeClass('green-lantern-image')
-    $('footer').removeClass('green-lantern-dark')
-
+    removeBatmanClasses()
+    removeGreenLanternClasses()
     // Add superman classes
     $('body').addClass('superman-blue')
     $('main').addClass('superman-blue')
@@ -211,28 +171,8 @@ function addSupermanClasses() {
 }
 
 function addGreenLanternClasses() {
-    // Remove batman classes
-    $('body').removeClass('batman-dark')
-    $('main').removeClass('batman-dark')
-    $('#search-container').removeClass('batman-dark')
-    $('#preview-container').removeClass('batman-dark')
-    $('#template-container').removeClass('batman-yellow')
-    $('#HTML-Code').removeClass('batman-yellow')
-    $('#CSS-Code').removeClass('batman-yellow')
-    $('.hero-image').removeClass('batman-image')
-    $('footer').removeClass('batman-yellow')
-
-    // Removes superman classes
-    $('body').removeClass('superman-blue')
-    $('main').removeClass('superman-blue')
-    $('#search-container').removeClass('superman-red')
-    $('#preview-container').removeClass('superman-red')
-    $('#template-container').removeClass('superman-yellow')
-    $('#HTML-Code').removeClass('superman-red')
-    $('#CSS-Code').removeClass('superman-red')
-    $('.hero-image').removeClass('superman-image')
-    $('footer').removeClass('superman-red')
-
+    removeBatmanClasses()
+    removeSupermanClasses()
     // Add green-lantern classes
     $('body').addClass('green-lantern-green')
     $('main').addClass('green-lantern-green')
@@ -247,7 +187,43 @@ function addGreenLanternClasses() {
     localStorage.setItem("theme", "green-lantern");
 }
 
+function removeBatmanClasses() {
+    $('body').removeClass('batman-dark')
+    $('main').removeClass('batman-dark')
+    $('#search-container').removeClass('batman-dark')
+    $('#preview-container').removeClass('batman-dark')
+    $('#template-container').removeClass('batman-yellow')
+    $('#HTML-Code').removeClass('batman-yellow')
+    $('#CSS-Code').removeClass('batman-yellow')
+    $('.hero-image').removeClass('batman-image')
+    $('footer').removeClass('batman-yellow')
+}
 
+function removeSupermanClasses() {
+    $('body').removeClass('superman-blue')
+    $('main').removeClass('superman-blue')
+    $('#search-container').removeClass('superman-red')
+    $('#preview-container').removeClass('superman-red')
+    $('#template-container').removeClass('superman-yellow')
+    $('#HTML-Code').removeClass('superman-red')
+    $('#CSS-Code').removeClass('superman-red')
+    $('.hero-image').removeClass('superman-image')
+    $('footer').removeClass('superman-red')
+}
+
+function removeGreenLanternClasses() {
+    $('body').removeClass('green-lantern-green')
+    $('main').removeClass('green-lantern-green')
+    $('#search-container').removeClass('green-lantern-green')
+    $('#preview-container').removeClass('green-lantern-green')
+    $('#template-container').removeClass('green-lantern-dark')
+    $('#HTML-Code').removeClass('green-lantern-green')
+    $('#CSS-Code').removeClass('green-lantern-green')
+    $('.hero-image').removeClass('green-lantern-image')
+    $('footer').removeClass('green-lantern-dark')
+}
+
+// Local Storage Theme
 window.onload = checkTheme();
 function checkTheme() {
     const theme = localStorage.getItem("theme");
@@ -383,4 +359,3 @@ $('.message-modal .modal-background').on('click', () => {
         $('.message-modal').removeClass('is-active');
     }, 1000)
 })
-
