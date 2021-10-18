@@ -5,14 +5,8 @@
 }
 
 .message {
-	position: absolute;
-	/* width: 50%; */
-	top: 115%;
-	left: 25%;
-	right: 25%;
-	/* transform: translate(-50%, -50%); */
-	display: none;
-	z-index: 100;
+	width: 75%;
+	margin: 0 auto;
 }
 
 i {
