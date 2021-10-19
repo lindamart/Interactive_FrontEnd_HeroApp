@@ -68,4 +68,13 @@ Type.fit Quotes API Docs: https://type.fit/api/quotes
 
 Icons8 Docs: https://icons8.com/
 
+Bulma: https://bulma.io/
+
+JQuery: https://jquery.com/
+
+Google Fonts: https://fonts.google.com/
+
+Clipboardjs Docs: https://clipboardjs.com/
+
+Animate.css: https://animate.style/
 
