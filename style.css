@@ -345,7 +345,8 @@ body {
 	text-align: center;
 	cursor: pointer;
 	border: none;
-	border-radius: .25em;
+	border-radius: 3px;
+	padding: 5px;
 }
 
 textarea {

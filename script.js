@@ -90,7 +90,7 @@ function generateHTML() {
 }
 
 // Generate CSS Code output based on content in preview
-function generateCSS(url) {
+function generateCSS(url='none') {
     var template =
         `<textarea id="css" class="copy-button" readonly data-clipboard-target="#css">
 html, body {
@@ -98,7 +98,7 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'arial'
 }
 
 .hero-image {
@@ -107,19 +107,19 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
     
 .hero-text {
     text-align: center;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: white;
+}
+
+.hero-text h1 {
+	font-size: 5rem;
+	margin: 0;
 }
 
 button {
@@ -127,6 +127,12 @@ button {
 	text-align: center;
 	cursor: pointer;
 	border: none;
+    padding: 10px;
+	border-radius: 3px;
+}
+
+button:hover {
+	opacity: .5;
 }
 
 </textarea>`;
@@ -244,6 +250,8 @@ function checkTheme() {
 
 // Initialize App
 HTML_code.append(generateHTML())
+generateCSS()
+
 getQuote()
 
 // Add theme classes
