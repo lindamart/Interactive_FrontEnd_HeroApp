@@ -270,7 +270,8 @@ $('.image-row').on('click', '.imgResult', function () {
 $('#quoteBtn').on('click', getQuote)
 
 // Fetch images
-fetchButton.on('click', function () {
+fetchButton.on('click', function (e) {
+    e.preventDefault()
     $('.image-row').empty()
     getImages()
 });
